@@ -25,9 +25,11 @@
 # 2-설정 앱
 * `프로젝트 명` 해가 뜹니다!<br>`게시 날짜` 2023년 1월 10일(화)<br>`참고 자료` [리이오님의 인프런 강좌(간단하게 만들어 보는 iOS 설정앱)](https://www.inflearn.com/course/ios-swiftui-설정앱/dashboard)
 
-| 실제 앱 | 시뮬레이션 |
+| 실제 앱(iOS 16.2) | 시뮬레이션 |
 | :--: | :--: |
-| <img src="https://user-images.githubusercontent.com/21079970/211800337-9e3299cb-5f10-46e3-85fb-edcc26cfea9e.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/211800436-aef29837-d3c1-4361-9ae0-a4da436a22fb.png" align="center" width="235" height="511"> |
+| <img src="https://user-images.githubusercontent.com/21079970/211802759-43a5a01f-9a41-41f9-92e5-b28ff7878bfb.jpeg" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/211802832-eba1df83-4284-47b6-977b-5d1e0bab76db.png" align="center" width="235" height="511"> |
 
-* 해가 `뜨고`, `떠 있고`, `지는` 과정을 `SFSymbols`로 간단히 표현한 귀여운 앱입니다. `Button`과 `Image` 뷰를 활용하였습니다. 
+* 실제 iOS의 `설정` 앱의 외형을 그대로 따라 만들어 보았습니다. 하위 뷰는 구현되지 않았습니다. 기능이 실제로 동작하지 않습니다. `NavigationStack`과 `NavigationLink` 뷰를 활용하였습니다.
+
+
 
