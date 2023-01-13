@@ -4,7 +4,7 @@
 * `SwiftUI`를 활용해 코딩한 학습 목적의 미니(단기) 프로젝트를 모아 놓은 저장소입니다.
 
 ## 알아두세요!
-* 미니 프로젝트는 실제 앱의 구동이 아닌 `학습용`입니다. 일부 기능이 완성되지 않거나 비어있을 수 있습니다.
+* 미니 프로젝트의 목표는 실제 앱의 구동이 아닌 `학습용`입니다. 일부 기능이 완성되지 않거나 비어있을 수 있습니다.
 * 일부 프로젝트에 대한 `README`가 완성되지 않았습니다.<br>양해 부탁드립니다.
 
 # 목차
@@ -29,7 +29,7 @@
 | :--: | :--: |
 | <img src="https://user-images.githubusercontent.com/21079970/211802759-43a5a01f-9a41-41f9-92e5-b28ff7878bfb.jpeg" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/211802832-eba1df83-4284-47b6-977b-5d1e0bab76db.png" align="center" width="235" height="511"> |
 
-* 실제 iOS의 `설정` 앱의 외형을 그대로 따라 만들어 보았습니다. 하위 뷰는 구현되지 않았습니다. 기능이 실제로 동작하지 않습니다. `NavigationStack`과 `NavigationLink` 뷰를 활용하였습니다.
+* 실제 iOS의 `설정` 앱의 외형을 그대로 따라 만들어 보았습니다. 하위 뷰는 구현되지 않았습니다. 기능이 실제로 동작하지 않습니다. `NavigationStack` 뷰를 활용하였습니다.
 
 
 
