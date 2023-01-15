@@ -10,9 +10,10 @@
 # 목차
 * [1-해가 뜹니다!](/1-sunrise)
 * [2-설정 앱](/2-setting)
+* [3-이모지](/3-emoji)
 
 # 1-해가 뜹니다!
-* `프로젝트 명` 해가 뜹니다!<br>`게시 날짜` 2023년 1월 8일(일)<br>`참고 자료` [리이오님의 인프런 강좌(한 조각씩 배우는 SwiftUI)](https://www.inflearn.com/course/한조각-swiftui-입문)
+* `프로젝트 명` 해가 뜹니다!<br>`플랫폼` iOS<br>`게시 날짜` 2023년 1월 8일(일)<br>`참고 자료` [리이오님의 인프런 강좌(한 조각씩 배우는 SwiftUI)](https://www.inflearn.com/course/한조각-swiftui-입문)
 
 | 시뮬레이션 ① | 시뮬레이션 ② | 시뮬레이션 ③ |
 | :--: | :--: | :--: |
@@ -23,13 +24,21 @@
 <br>
 
 # 2-설정 앱
-* `프로젝트 명` 해가 뜹니다!<br>`게시 날짜` 2023년 1월 10일(화)<br>`참고 자료` [리이오님의 인프런 강좌(간단하게 만들어 보는 iOS 설정앱)](https://www.inflearn.com/course/ios-swiftui-설정앱/dashboard)
+* `프로젝트 명` 해가 뜹니다!<br>`플랫폼` iOS<br>`게시 날짜` 2023년 1월 10일(화)<br>`참고 자료` [리이오님의 인프런 강좌(간단하게 만들어 보는 iOS 설정앱)](https://www.inflearn.com/course/ios-swiftui-설정앱/dashboard)
 
-| 실제 앱(iOS 16.2) | 시뮬레이션 |
+| 실제 앱 | 시뮬레이션 |
 | :--: | :--: |
 | <img src="https://user-images.githubusercontent.com/21079970/211802759-43a5a01f-9a41-41f9-92e5-b28ff7878bfb.jpeg" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/211802832-eba1df83-4284-47b6-977b-5d1e0bab76db.png" align="center" width="235" height="511"> |
 
-* 실제 iOS의 `설정` 앱의 외형을 그대로 따라 만들어 보았습니다. 하위 뷰는 구현되지 않았습니다. 기능이 실제로 동작하지 않습니다. `NavigationStack` 뷰를 활용하였습니다.
+* 실제 iOS의 `설정` 앱의 외형을 그대로 따라 만들어 보았습니다. 하위 뷰는 구현되지 않았습니다. 기능이 실제로 동작하지 않습니다. `NavigationView` 뷰를 활용하였습니다.
 
+# 3-이모지
+* `프로젝트 명` 이모지<br>`플랫폼` iOS<br>`게시 날짜` 2023년 1월 15일(일)
+
+| 시뮬레이션 ① | 시뮬레이션 ② | 시뮬레이션 ③ |
+| :--: | :--: | :--: |
+| <img src="https://user-images.githubusercontent.com/21079970/212540818-98f385b3-45c1-42af-9ae1-a591509509b4.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/212540821-4f7574d6-03de-4b98-9d46-473610f3c8f6.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/212540823-fc11b004-ce9a-42cc-a44e-6e9ce02c2e01.png" align="center" width="235" height="511"> |
+
+* 이모지의 `이름`과 `이모지`를 뷰에 추가하고, 관리하는 단순한 앱입니다. `.Animation(_:)` 제어자를 활용하였습니다.
 
 
