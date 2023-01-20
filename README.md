@@ -13,13 +13,16 @@
 * [3-이모지](/3-emoji)
 
 # 1-해가 뜹니다!
-* `프로젝트 명` 해가 뜹니다!<br>`플랫폼` iOS<br>`게시 날짜` 2023년 1월 8일(일)<br>`참고 자료` [리이오님의 인프런 강좌(한 조각씩 배우는 SwiftUI)](https://www.inflearn.com/course/한조각-swiftui-입문)
 
-| 시뮬레이션 ① | 시뮬레이션 ② | 시뮬레이션 ③ |
+**작품명** 해가 뜹니다! <br>
+**플랫폼** `iOS` <br>
+**게시일**  2023년 1월 8일(일) <br>
+
+| 이미지 ① | 이미지 ② | 이미지 ③ |
 | :--: | :--: | :--: |
 | <img src="https://user-images.githubusercontent.com/21079970/211800337-9e3299cb-5f10-46e3-85fb-edcc26cfea9e.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/211800436-aef29837-d3c1-4361-9ae0-a4da436a22fb.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/211800208-4271baab-b0e4-4d2f-8002-af9f933fdf0e.png" align="center" width="235" height="511"> |
 
-* 해가 `뜨고`, `떠 있고`, `지는` 과정을 `SFSymbols`로 간단히 표현한 귀여운 앱입니다. `Button`과 `Image` 뷰를 활용하였습니다. 
+* 해가 `뜨고`, `떠 있고`, `지는` 과정을 `SFSymbols`로 간단히 표현한 귀여운 앱입니다. `Button`과 `Image` 뷰를 활용하였습니다.
 
 <br>
 
