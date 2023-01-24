@@ -11,10 +11,10 @@
 
 # 1-계산기
 
-**작품명** (공란) <br>
-**플랫폼** `공란` <br>
-**게시일**  공란 <br>
-**참고자료** (공란)
+**작품명** 계산기 <br>
+**플랫폼** iOS <br>
+**게시일**  2023년 1월 24일(화) <br>
+**참고자료** [Build the Apple Calculator in SwiftUI](https://medium.com/better-programming/build-the-apple-calculator-in-swiftui-2fad61285dc8)
 
 | 이미지 ① | 이미지 ② | 이미지 ③ |
 | :--: | :--: | :--: |
