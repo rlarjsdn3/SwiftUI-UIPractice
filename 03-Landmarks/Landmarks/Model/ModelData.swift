@@ -1,0 +1,48 @@
+//
+//  ModelData.swift
+//  Landmarks
+//
+//  Created by 김건우 on 2023/01/25.
+//
+
+import Foundation
+import Combine
+
+class ModelData: ObservableObject {
+    @Published var landmarks: [Landmark] = load("landmarkData.json")
+    var hikes: [Hike] = load("hikeData.json")
+    @Published var profile = Profile.default
+    
+    var features: [Landmark] {
+        landmarks.filter { $0.isFeatured }
+    }
+    
+    var categories: [String: [Landmark]] {
+        Dictionary(
+            grouping: landmarks,
+            by: { $0.category.rawValue }
+        )
+    }
+}
+
+func load<T: Decodable>(_ fileName: String) -> T {
+    let data: Data
+    
+    guard let file: URL = Bundle.main.url(forResource: fileName, withExtension: nil)
+    else {
+        fatalError("Couldn't find \(fileName) in main bundle.")
+    }
+    
+    do {
+        data = try Data(contentsOf: file)
+    } catch {
+        fatalError("Couldn't load \(fileName) from main bundle:\n\(error)")
+    }
+    
+    do {
+        let decoder: JSONDecoder = JSONDecoder()
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        fatalError("Couldn't parse \(fileName) as \(T.self):\n\(error)")
+    }
+}
