@@ -2,9 +2,7 @@
 
 # 스위프트UI 미니 프로젝트
 * `SwiftUI`를 활용해 코딩한 학습 목적의 미니(단기) 프로젝트를 모아 놓은 저장소입니다.
-
-## 알아두세요!
-* 미니 프로젝트의 목표는 실제 앱의 구동이 아닌 `학습용`입니다. 일부 기능이 완성되지 않거나 비어있을 수 있습니다.
+* 미니 프로젝트의 목표는 실제 앱의 구동이 아닌 **학습용**입니다. 일부 기능이 완성되지 않거나 비어있을 수 있습니다.
 
 ## 목차
 * [1-계산기(Calculator)](#1-계산기)
@@ -15,7 +13,7 @@
 # 1-계산기
 
 **작품명** [계산기](/01-Calculator) <br>
-**플랫폼** iOS <br>
+**플랫폼** `iOS` <br>
 **게시일**  2023년 1월 24일(화) <br>
 **참고자료** [Build the Apple Calculator in SwiftUI](https://medium.com/better-programming/build-the-apple-calculator-in-swiftui-2fad61285dc8)
 
@@ -28,7 +26,7 @@
 # 2-도시_카드
 
 **작품명** [도시 카드](/02-CityCard) <br>
-**플랫폼** iOS <br>
+**플랫폼** `iOS` <br>
 **게시일**  2023년 1월 26일(목) <br>
 **참고자료** [Create Custom View Components in SwiftUI](https://levelup.gitconnected.com/create-custom-view-components-in-swiftui-845b65e8ba94)
 
@@ -41,7 +39,7 @@
 # 3-랜드마크
 
 **작품명** [랜드마크](/03-Landmarks) <br>
-**플랫폼** iOS <br>
+**플랫폼** `iOS` <br>
 **게시일**  2023년 1월 29일(일) <br>
 **참고자료** [SwiftUI Tutorials](https://developer.apple.com/tutorials/swiftui)
 
@@ -57,7 +55,7 @@
 # 4-스크럼
 
 **작품명** [스크럼](/04-Scrumdiger) <br>
-**플랫폼** iOS <br>
+**플랫폼** `iOS` <br>
 **게시일**  2023년 2월 8일(수) <br>
 **참고자료** [iOS App Dev Tutorials](https://developer.apple.com/tutorials/app-dev-training)
 
