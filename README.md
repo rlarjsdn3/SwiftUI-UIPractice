@@ -1,10 +1,12 @@
 <img src="https://user-images.githubusercontent.com/21079970/211797254-babc20dc-10c1-4edd-8ce2-56b1e6ee497c.png" align="center" width="150" height="150">
 
-# 스위프트UI 미니 프로젝트
-* `SwiftUI`를 활용해 코딩한 학습 목적의 미니(단기) 프로젝트를 모아 놓은 저장소입니다.
+# SwiftUI Mini Projects
+## Overview
+> `SwiftUI`를 활용해 코딩한 학습 목적의 미니(단기) 프로젝트를 모아 놓은 저장소입니다.
+
 * 미니 프로젝트의 목표는 실제 앱의 구동이 아닌 **학습용**입니다. 일부 기능이 완성되지 않거나 비어있을 수 있습니다.
 
-## 목차
+## Table Of Contents
 * [1-계산기(Calculator)](#1-계산기)
 * [2-도시카드(City Card)](#2-도시_카드)
 * [3-랜드마크(Landmarks)](#3-랜드마크)
