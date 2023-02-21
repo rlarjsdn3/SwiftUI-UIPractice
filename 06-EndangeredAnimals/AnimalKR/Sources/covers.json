@@ -1,0 +1,34 @@
+[
+  {
+    "id" : 1,
+    "name" : "cover-tiger"
+  },
+  {
+    "id" : 2,
+    "name" : "cover-fox"
+  },
+  {
+    "id" : 3,
+    "name" : "cover-otter"
+  },
+  {
+    "id" : 4,
+    "name" : "cover-bear"
+  },
+  {
+    "id" : 5,
+    "name" : "cover-caudatus"
+  },
+  {
+    "id" : 6,
+    "name" : "cover-bengalensis"
+  },
+  {
+    "id" : 7,
+    "name" : "cover-flavigula"
+  },
+	{
+		"id" : 8,
+		"name" : "cover-Lynx"
+	}
+]
