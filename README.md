@@ -13,7 +13,7 @@
 * [4-스크럼(Scrumdiger)](#4-스크럼)
 * [5-날씨(Weather)](#5-날씨)
 * [6-멸종위기동물사전(EndangeredAnimals)](#6-멸종위기동물사전)
-* [7-BlackWhite탭바(BlackWhiteTabBar)](#7-BlackWhite탭바)
+* [7-커스텀데이트피커뷰(CustomDatePickerView)](#7-커스텀데이트피커뷰)
 
 # 1-계산기
 
@@ -102,16 +102,15 @@
 
 <br>
 
-# 7-BlackWhite탭바
+# 7-커스텀데이트피커뷰
 
-**작품명** [BlackWhite탭바](/07-BlackWhiteTabBar) <br>
+**작품명** [커스텀데이트피커뷰](/07-CustomDatePickerView) <br>
 **플랫폼** `iOS` <br>
-**게시일**  2023년 2월 22일(수) <br>
+**게시일**  2023년 2월 24일(금) <br>
 **참고자료** [SwiftUI 2.0 Animated Tab Bar](https://www.youtube.com/watch?v=TJfI3-qdta8)
 
 | 이미지 ① |
 | :--: |
-| <img src="https://user-images.githubusercontent.com/21079970/220645697-6fef192f-38d6-483c-b183-a3a8d1799890.gif" align="center" width="235" height="511"> |
+| <img src="https://user-images.githubusercontent.com/21079970/221188278-37ad3f2c-74c5-49d2-abf1-3293bf03697b.gif" align="center" width="235" height="511"> |
 
-* BlackWhite탭바는 정말로 실용적인 `사용자화 탭 뷰(Custom Tab View)`와는 거리가 멉니다. 단순한 `Drawing And Path`와 `Animation` 연습용 프로젝트입니다. 
 
