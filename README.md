@@ -14,7 +14,7 @@
 * [05-날씨(Weather)](#05-날씨)
 * [06-멸종위기동물사전(EndangeredAnimals)](#06-멸종위기동물사전)
 * [07-커스텀데이트피커뷰(CustomDatePickerView)](#07-커스텀데이트피커뷰)
-* [08-투두리스트(with Realm)](#08-투두리스트(withRealm))
+* [08-투두리스트(with_Realm)](#08-투두리스트)
 
 # Projects
 ## 01-계산기
@@ -117,7 +117,7 @@
 
 <br>
 
-## 08-투두리스트(withRealm)
+## 08-투두리스트
 
 **작품명** [투두리스트(with Realm)](/08-TodoList(withRealm)) <br>
 **플랫폼** `iOS` <br>
