@@ -13,8 +13,9 @@
 * [04-스크럼(Scrumdiger)](#04-스크럼)
 * [05-날씨(Weather)](#05-날씨)
 * [06-멸종위기동물사전(EndangeredAnimals)](#06-멸종위기동물사전)
-* [07-커스텀데이트피커뷰(CustomDatePickerView)](#07-커스텀데이트피커뷰)
-* [08-투두리스트(with_Realm)](#08-투두리스트)
+* [07-커스텀_데이트피커뷰_01(Custom_DatePickerView_01)](#07-커스텀_데이트피커뷰_01)
+* [08-투두리스트(Realm_기초)](#08-투두리스트(Realm_기초))
+* [09-커스텀_데이트피커뷰_02(Custom_DatePickerView_02)](#09-커스텀_데이트피커뷰_02)
 
 # Projects
 ## 01-계산기
@@ -104,9 +105,9 @@
 
 <br>
 
-## 07-커스텀데이트피커뷰
+## 07-커스텀_데이트피커뷰_01
 
-**작품명** [커스텀데이트피커뷰](/07-CustomDatePickerView) <br>
+**작품명** [커스텀_데이트피커뷰_01](/07-Custom_DatePickerView_01) <br>
 **플랫폼** `iOS` <br>
 **게시일**  2023년 2월 24일(금) <br>
 **참고자료** [SwiftUI 2.0 Animated Tab Bar](https://www.youtube.com/watch?v=TJfI3-qdta8)
@@ -117,9 +118,9 @@
 
 <br>
 
-## 08-투두리스트
+## 08-투두리스트(Realm_기초)
 
-**작품명** [투두리스트(with Realm)](/08-TodoList(withRealm)) <br>
+**작품명** [투두리스트(Realm_기초)](/08-TodoList_Realm_Basic) <br>
 **플랫폼** `iOS` <br>
 **게시일**  2023년 2월 28일(화) <br>
 **참고자료** [Build a SwiftUI to-do app from scratch with Realm Crash Course](https://www.youtube.com/watch?v=b6q9vKaXtoU&t=1995s)
@@ -132,6 +133,15 @@
 
 <br>
 
+## 09-커스텀_데이트피커뷰_02
 
+**작품명** [커스텀_데이트피커뷰_02](/09-Custom_DatePickerView_02) <br>
+**플랫폼** `iOS` <br>
+**게시일**  2023년 3월 3일(금) <br>
+**참고자료** [SwiftUI 3.0 Elegant Task App UI With Custom Date Picker](https://www.youtube.com/watch?v=UZI2dvLoPr8&t=909s)
 
+| 이미지 ① | 이미지 ② |
+| :--: | :--: |
+| <img src="https://user-images.githubusercontent.com/21079970/222674730-58cb16e6-07c9-4a5f-b372-7dac77e37d48.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/222674752-f206bccf-a4cb-4534-b968-a5b3f56ff06d.gif" align="center" width="235" height="511"> |
 
+<br>
