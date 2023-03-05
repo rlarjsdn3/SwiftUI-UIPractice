@@ -16,6 +16,7 @@
 * [07-커스텀_데이트피커뷰_01(Custom_DatePickerView_01)](#07-커스텀_데이트피커뷰_01)
 * [08-투두리스트(Realm_기초)](#08-투두리스트(Realm_기초))
 * [09-커스텀_데이트피커뷰_02(Custom_DatePickerView_02)](#09-커스텀_데이트피커뷰_02)
+* [10-로티_애니메이션(Lottie_Animation)](#10-로티_애니메이션)
 
 # Projects
 ## 01-계산기
@@ -143,5 +144,18 @@
 | 이미지 ① | 이미지 ② |
 | :--: | :--: |
 | <img src="https://user-images.githubusercontent.com/21079970/222674730-58cb16e6-07c9-4a5f-b372-7dac77e37d48.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/222674752-f206bccf-a4cb-4534-b968-a5b3f56ff06d.gif" align="center" width="235" height="511"> |
+
+<br>
+
+## 10-로티_애니메이션
+
+**작품명** [로티_애니메이션](/10-LottieAnimation) <br>
+**플랫폼** `iOS` <br>
+**게시일**  2023년 3월 5일(일) <br>
+**참고자료** [How to add Lottie Animation in SwiftUI](https://medium.com/@ckinetandrii/how-to-add-lottie-animation-in-swiftui-de39fe0c7018)
+
+| 이미지 ① |
+| :--: |
+| <img src="https://user-images.githubusercontent.com/21079970/222953940-6ef89887-e96a-4b77-b353-0f6e986f8029.gif" align="center" width="235" height="511"> |
 
 <br>
