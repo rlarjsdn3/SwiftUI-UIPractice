@@ -72,7 +72,7 @@ struct CustomTabView: View {
             .overlay {
                 if selected.wrappedValue == item {
                     CustomTabShape()
-                        .fill(item.accentColor)
+                        .fill(selected.wrappedValue.accentColor)
                         .frame(width: 45, height: 5)
                         .offset(y: -38)
                         .matchedGeometryEffect(id: "shape", in: animation)
