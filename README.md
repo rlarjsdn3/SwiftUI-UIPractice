@@ -18,6 +18,7 @@
 * [09-커스텀_데이트피커뷰_02(Custom_DatePickerView_02)](#09-커스텀_데이트피커뷰_02)
 * [10-로티_애니메이션(Lottie_Animation)](#10-로티_애니메이션)
 * [11-도서_검색](#11-도서_검색)
+* [12-커스텀_탭뷰_01(Custom_TabView_01)](#12-커스텀_탭뷰_01)
 
 # Projects
 ## 01-계산기
@@ -177,4 +178,15 @@
 * 네이버의 `검색 API` 활용 연습을 위한 간단한 프로젝트입니다.
 
 <br>
+
+#12-커스텀_탭뷰_01
+
+**작품명** [커스텀_탭뷰_01](/12-CustomTabView_01) <br>
+**플랫폼** `iOS` <br>
+**게시일**  2023년 3월 11일(토) <br>
+**참고자료** [SwiftUI 2.0 Custom Tab Bar - Preserving State When Ever Tab Changes In SwiftUI](https://www.youtube.com/watch?v=3psB2i2Ondo)
+
+| 이미지 ① | 이미지 ② | 이미지 ③ |
+| :--: | :--: | :--: |
+| <img src="https://user-images.githubusercontent.com/21079970/224487368-74525505-d223-4b13-8cbb-e52619e98252.gif" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/224487385-7cb9c2c9-5a18-4bb4-9696-9d95567a68b3.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/224487386-7ca13500-7ca2-4908-aeb5-428eb61f2b37.png" align="center" width="235" height="511"> |
 
