@@ -19,6 +19,7 @@
 * [10-로티_애니메이션(Lottie_Animation)](#10-로티_애니메이션)
 * [11-도서_검색](#11-도서_검색)
 * [12-컬러풀_탭_뷰(Colorful_TabView)](#12-컬러풀_탭_뷰)
+* [13-커브_애니메이션_탭_뷰(Curve_Animated_Tab_View)](#13-커브_애니메이션_탭_뷰)
 
 # Projects
 ## 01-계산기
@@ -189,4 +190,17 @@
 | 이미지 ① | 이미지 ② | 이미지 ③ |
 | :--: | :--: | :--: |
 | <img src="https://user-images.githubusercontent.com/21079970/224487368-74525505-d223-4b13-8cbb-e52619e98252.gif" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/224487385-7cb9c2c9-5a18-4bb4-9696-9d95567a68b3.png" align="center" width="235" height="511"> | <img src="https://user-images.githubusercontent.com/21079970/224487386-7ca13500-7ca2-4908-aeb5-428eb61f2b37.png" align="center" width="235" height="511"> |
+
+<br>
+
+## 13-커브_애니메이션_탭_뷰
+
+**작품명** [커브_애니메이션_탭_뷰](/13-CurveAnimatedTabView) <br>
+**플랫폼** `iOS` <br>
+**게시일**  2023년 3월 12일(일) <br>
+**참고자료** [SwiftUI 2.0 Animated Tab Bar - Custom Shapes And Animations](https://www.youtube.com/watch?v=TJfI3-qdta8)
+
+| 이미지 ① |
+| :--: |
+| <img src="https://user-images.githubusercontent.com/21079970/224531277-766e7d08-9bbf-4f42-9d7b-88d73a5f322e.gif" align="center" width="235" height="511"> |
 
