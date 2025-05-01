@@ -65,6 +65,13 @@ extension Color {
             dark:  Color(r: 245, g: 245, b: 254)
         )
     }
+    
+    static var travelStroke: Color {
+        self.init(
+            light: Color(r: 229, g: 234, b: 245),
+            dark:  Color(r: 229, g: 234, b: 245)
+        )
+    }
 
 }
 

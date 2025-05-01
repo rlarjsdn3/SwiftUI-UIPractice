@@ -11,6 +11,9 @@ import SwiftUI
 
 ///
 struct TravelNavigationStack<Content>: View where Content: View {
+    
+    // MARK: Properties
+    
     @State private var navigationBarHeight: CGFloat = 50
     @State private var navigationBarTitle: String = ""
     @State private var navigationTitleDisplayMode: NavigationBarItem.TitleDisplayMode = .automatic
