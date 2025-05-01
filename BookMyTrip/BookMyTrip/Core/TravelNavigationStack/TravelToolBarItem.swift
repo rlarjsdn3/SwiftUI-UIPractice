@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TravelToolBarItem: View {
-    var symbol: TravelSymbol
+    var symbol: SFSymbol
     var action: () -> Void
 
     init(
-        _ symbol: TravelSymbol,
+        _ symbol: SFSymbol,
         action: @escaping () -> Void
     ) {
         self.symbol = symbol

@@ -11,7 +11,8 @@ import SwiftUI
 struct BookMyTripApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FindDealsView()
+                .dynamicTypeSize(.accessibility1 ... .xxxLarge) // TODO: DynamicType 범위 조정하기
         }
     }
 }

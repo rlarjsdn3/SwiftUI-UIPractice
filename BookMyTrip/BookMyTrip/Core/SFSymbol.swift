@@ -1,5 +1,5 @@
 //
-//  TravelSymbol.swift
+//  SFSymbol.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/1/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 ///
-enum TravelSymbol: String {
+enum SFSymbol: String {
     ///
     case personFill                 = "person.fill"
     ///
@@ -26,7 +26,12 @@ enum TravelSymbol: String {
     ///
     case chevronLeft                = "chevron.left"
     ///
+    @available(*, deprecated, message: "Hamberger3Line 도형을 사용하세요.")
     case line3HorizontalDecrease    = "line.3.horizontal.decrease"
+    ///
+    case magnifyingGlass            = "magnifyingglass"
+    ///
+    case bookmarkFill               = "bookmark.fill"    
 }
 
 
@@ -65,3 +70,4 @@ enum TravelSymbol: String {
 #Preview("line.3.horizontal.decrease", traits: .sizeThatFitsLayout) {
     Image(symbol: .line3HorizontalDecrease)
 }
+

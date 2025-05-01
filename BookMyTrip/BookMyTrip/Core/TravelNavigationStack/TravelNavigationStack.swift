@@ -137,12 +137,12 @@ extension View {
     ///   - leadingToolbar: <#leadingToolbar description#>
     ///   - trailingToolBar: <#trailingToolBar description#>
     /// - Returns: <#description#>
-    func travelToolBarLayout<LEADING, TRAILING>(
+    func travelToolBarLayout<Leading, Trailing>(
         leadingSpacing: CGFloat? = nil,
         trailingSpacing: CGFloat? = nil,
-        @ViewBuilder leadingToolbar: () -> LEADING,
-        @ViewBuilder trailingToolBar: () -> TRAILING
-    ) -> some View where LEADING: View, TRAILING: View {
+        @ViewBuilder leadingToolbar: () -> Leading = { EmptyView() },
+        @ViewBuilder trailingToolBar: () -> Trailing = { EmptyView() }
+    ) -> some View where Leading: View, Trailing: View {
         return self.preference(
             key: ToolbarLayoutPreferenceKey.self,
             value: ToolbarLayout(

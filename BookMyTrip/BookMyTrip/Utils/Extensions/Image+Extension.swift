@@ -11,7 +11,7 @@ extension Image {
     
     /// <#Description#>
     /// - Parameter travelSymbol: <#travelSymbol description#>
-    init(symbol: TravelSymbol) {
+    init(symbol: SFSymbol) {
         self = Image(systemName: symbol.rawValue)
     }
 }
