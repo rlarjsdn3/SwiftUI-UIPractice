@@ -1,0 +1,16 @@
+//
+//  NavigationBarHeightPreferenceKey.swift
+//  BookMyTrip
+//
+//  Created by 김건우 on 5/1/25.
+//
+
+import SwiftUI
+
+@MainActor
+struct NavigationBarHeightPreferenceKey: @preconcurrency PreferenceKey {
+    static let defaultValue: CGFloat = 50
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
