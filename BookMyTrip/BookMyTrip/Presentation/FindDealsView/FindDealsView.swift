@@ -22,7 +22,7 @@ struct FindDealsView: View {
                     .padding()
                     .padding(.vertical, 6)
 
-                textfieldView
+                RoundedTextField(searchQuery: $searchQuery)
                     .padding(.horizontal)
                     .padding(.bottom, 16)
 
@@ -36,10 +36,11 @@ struct FindDealsView: View {
                 popularPlacesView
                     .padding(.bottom, 8)
             }
-            .travelToolBarLayout(leadingToolbar:  {
-                TravelToolBarItem(.line3HorizontalDecrease) {
-                } // TODO: 햄버거 버튼 수정하기
-                .scaleEffect(y: 1.25)
+            .travelToolBarLayout(leadingToolbar: {
+                TravelToolBarItem(
+                    Hamburger3Line().eraseToAnyShape()
+                ) { }
+                    .frame(width: 25, height: 20)
             })
 
         }
@@ -77,30 +78,9 @@ struct FindDealsView: View {
                             .fill(Color.travelBlue)
                             .frame(width: 7.5, height: 7.5)
                     }
-                    .offset(x: -1, y: 1)
+                    .offset(x: -2, y: 2)
                 }
         }
-    }
-
-    var textfieldView: some View {
-        HStack {
-            Image(symbol: .magnifyingGlass)
-                .font(.title3)
-                .fontWeight(.semibold)
-                .foregroundStyle(Color.travelGray)
-                .padding(.leading, 7.5)
-
-            TextField(
-                "SearchQuery",
-                text: $searchQuery,
-                prompt: Text("Search Flight, Hotels, etc...")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.travelGray)
-            )
-            .tint(Color.travelGray)
-        }
-        .padding()
-        .background(Color.travelSecondary, in: Capsule())
     }
 
     var findDiealsButtonGroupView: some View {

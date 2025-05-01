@@ -50,9 +50,14 @@ struct FindDealsButton: View {
 
                 Text(link.title)
                     .font(.subheadline)
-                    .fontWeight(.light)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color.label)
             }
         }
     }
+}
+
+
+#Preview {
+    FindDealsButton(link: FindDealsNavigationLink.airplane) { }
+
 }

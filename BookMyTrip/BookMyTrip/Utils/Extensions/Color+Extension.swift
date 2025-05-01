@@ -10,6 +10,11 @@ import SwiftUI
 
 extension Color {
 
+    /// 텍스트 기본 색상
+    static var label: Color {
+        Color(uiColor: .label)
+    }
+
     /// 예약 아이콘 배경 색상, 버튼 강조 색상, 추천 여행 배경 색상
     static var travelPurple: Color {
         self.init(
@@ -62,14 +67,14 @@ extension Color {
     static var travelSecondary: Color {
         self.init(
             light: Color(r: 245, g: 245, b: 254),
-            dark:  Color(r: 245, g: 245, b: 254)
+            dark:  Color(r: 41, g: 42, b: 47)
         )
     }
     
     static var travelStroke: Color {
         self.init(
             light: Color(r: 229, g: 234, b: 245),
-            dark:  Color(r: 229, g: 234, b: 245)
+            dark:  Color(r: 48, g: 48, b: 50)
         )
     }
 

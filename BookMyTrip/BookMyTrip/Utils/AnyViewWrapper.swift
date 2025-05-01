@@ -7,13 +7,23 @@
 
 import SwiftUI
 
-struct WrapperView: Identifiable {
+struct AnyViewWrapper: Identifiable {
     let id = UUID()
     let wrapperView: AnyView
+
+    init(_ view: AnyView) {
+        self.wrapperView = view
+    }
 }
 
-extension WrapperView: Equatable {
-    static func == (lhs: WrapperView, rhs: WrapperView) -> Bool {
+extension AnyViewWrapper: Equatable {
+    static func == (lhs: AnyViewWrapper, rhs: AnyViewWrapper) -> Bool {
         lhs.id == rhs.id
+    }
+}
+
+extension View {
+    func eraseToAnyView() -> AnyViewWrapper {
+        AnyViewWrapper(AnyView(self))
     }
 }

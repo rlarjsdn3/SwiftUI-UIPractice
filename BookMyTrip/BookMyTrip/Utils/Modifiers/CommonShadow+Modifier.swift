@@ -27,7 +27,7 @@ extension View {
     
     func commonShadow(
         _ color: Color = .travelGray,
-        opacity: Double = 0.5
+        opacity: Double = 0.33
     ) -> some View {
         self.modifier(
             CommonShadow(

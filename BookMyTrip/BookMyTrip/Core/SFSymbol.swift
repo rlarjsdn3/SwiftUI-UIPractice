@@ -26,7 +26,7 @@ enum SFSymbol: String {
     ///
     case chevronLeft                = "chevron.left"
     ///
-    @available(*, deprecated, message: "Hamberger3Line 도형을 사용하세요.")
+    @available(*, deprecated, message: "Hamburger3Line 도형을 사용하세요.")
     case line3HorizontalDecrease    = "line.3.horizontal.decrease"
     ///
     case magnifyingGlass            = "magnifyingglass"

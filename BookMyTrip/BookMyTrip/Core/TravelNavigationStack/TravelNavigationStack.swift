@@ -146,9 +146,9 @@ extension View {
         return self.preference(
             key: ToolbarLayoutPreferenceKey.self,
             value: ToolbarLayout(
-                leadingToolbar: WrapperView(wrapperView: AnyView(leadingToolbar())),
+                leadingToolbar: leadingToolbar().eraseToAnyView(),
                 leadingSpacing: leadingSpacing,
-                trarilingToolbar: WrapperView(wrapperView: AnyView(trailingToolBar())),
+                trarilingToolbar: trailingToolBar().eraseToAnyView(),
                 trailingSpacing: trailingSpacing
             )
         )
@@ -166,9 +166,10 @@ extension View {
                 TravelToolBarItem(.chevronLeft) {
                 }
             } trailingToolBar: {
-                TravelToolBarItem(.line3HorizontalDecrease) {
-                }
-                .scaleEffect(y: 1.45)
+                TravelToolBarItem(
+                    Hamburger3Line().eraseToAnyShape()
+                ) { }
+                    .frame(width: 25, height: 20)
             }
             .ignoresSafeArea()
 
@@ -180,12 +181,12 @@ extension View {
         Color.travelLightPurple
             .travelNavigationBarTitle("Book Your Flight")
             .travelToolBarLayout {
-                TravelToolBarItem(.chevronLeft) {
-                }
+                TravelToolBarItem(.chevronLeft) { }
             } trailingToolBar: {
-                TravelToolBarItem(.line3HorizontalDecrease) {
-                }
-                .scaleEffect(y: 1.45)
+                TravelToolBarItem(
+                    Hamburger3Line().eraseToAnyShape()
+                ) { }
+                    .frame(width: 25, height: 20)
             }
             .ignoresSafeArea()
             .travelNavigationBarTitleDisplayMode(.large)

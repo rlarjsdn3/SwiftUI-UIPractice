@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ToolbarLayout: Equatable {
-    let leadingToolbar: WrapperView?
+    let leadingToolbar: AnyViewWrapper?
     let leadingSpacing: CGFloat?
-    let trarilingToolbar: WrapperView?
+    let trarilingToolbar: AnyViewWrapper?
     let trailingSpacing: CGFloat?
 
     init(
-        leadingToolbar: WrapperView? = nil,
+        leadingToolbar: AnyViewWrapper? = nil,
         leadingSpacing: CGFloat? = nil,
-        trarilingToolbar: WrapperView? = nil,
+        trarilingToolbar: AnyViewWrapper? = nil,
         trailingSpacing: CGFloat? = nil
     ) {
         self.leadingToolbar = leadingToolbar

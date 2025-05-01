@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct TravelToolBarItem: View {
-    var symbol: SFSymbol
-    var action: () -> Void
+    let shape: AnyShapeWrapper?
+    let symbol: SFSymbol?
+    let action: () -> Void
+
+    init(
+        _ shape: AnyShapeWrapper,
+        action: @escaping () -> Void
+    ) {
+        self.shape = shape
+        self.symbol = nil
+        self.action = action
+    }
 
     init(
         _ symbol: SFSymbol,
         action: @escaping () -> Void
     ) {
+        self.shape = nil
         self.symbol = symbol
         self.action = action
     }
@@ -23,15 +34,30 @@ struct TravelToolBarItem: View {
         Button {
             action()
         } label: {
-            Image(symbol: symbol)
-                .font(.headline)
-                .fontWeight(.bold)
-                .foregroundStyle(.black)
+            Group {
+                if let symbol = symbol {
+                    Image(symbol: symbol)
+                        .fontWeight(.semibold)
+                }
+
+                if let shape = shape {
+                    shape
+                }
+            }
+            .font(.title3)
+            .foregroundStyle(Color.label)
         }
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    TravelToolBarItem(.airplane) {
-    }
+    TravelToolBarItem(.airplane) { }
+}
+
+
+#Preview(traits: .sizeThatFitsLayout) {
+    TravelToolBarItem(
+        Hamburger3Line().eraseToAnyShape()
+    ) { }
+        .frame(width: 25, height: 20)
 }
