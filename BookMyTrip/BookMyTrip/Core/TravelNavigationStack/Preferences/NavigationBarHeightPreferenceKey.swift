@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 struct NavigationBarHeightPreferenceKey: @preconcurrency PreferenceKey {
-    static let defaultValue: CGFloat = 50
+    static let defaultValue: CGFloat = 30
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = nextValue()
     }

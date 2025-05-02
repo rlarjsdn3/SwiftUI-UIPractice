@@ -1,5 +1,5 @@
 //
-//  PopularPlaceCell.swift
+//  PopularPlaceCard.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/1/25.
@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-
-struct PopularPlaceCell: View {
+struct PopularPlaceCard: View {
     
     let place: PopularPlace
 
@@ -73,6 +72,6 @@ struct PopularPlaceCell: View {
 // MARK: - Previews
 
 #Preview(traits: .fixedLayout(width: 400, height: 375)) {
-    PopularPlaceCell(place: appData.popularPlaces[0])
+    PopularPlaceCard(place: appData.popularPlaces[0])
         .frame(width: 250, height: 325)
 }

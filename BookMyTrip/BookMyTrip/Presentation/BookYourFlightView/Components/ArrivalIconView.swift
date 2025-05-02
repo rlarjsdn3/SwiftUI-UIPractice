@@ -1,5 +1,5 @@
 //
-//  ArrivalIndicator.swift
+//  ArrivalIconView.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/2/25.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct ArrivalIndicator: View {
+struct ArrivalIconView: View {
     var body: some View {
         VStack(spacing: 3) {
             VerticalLine(lineCap: .round, dash: [1, 2])
-            MapPinImage()
-                .frame(width: 20, height: 20)
+            TemplateImage(asset: .mapPin)
+                .foregroundStyle(Color.travelGray)
+                .frame(width: 15, height: 15)
         }
         .frame(width: 30)
         .foregroundStyle(Color.travelGray)
@@ -21,6 +22,6 @@ struct ArrivalIndicator: View {
 }
 
 #Preview("Destination Side Image", traits: .sizeThatFitsLayout) {
-    ArrivalIndicator()
+    ArrivalIconView()
         .frame(height: 50)
 }

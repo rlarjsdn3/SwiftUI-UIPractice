@@ -1,5 +1,5 @@
 //
-//  RoundedTextField.swift
+//  CapsuleSearchBar.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/1/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoundedTextField: View {
+struct CapsuleSearchBar: View {
     @Binding var searchQuery: String
 
     init(searchQuery: Binding<String>) {
@@ -37,5 +37,5 @@ struct RoundedTextField: View {
 }
 
 #Preview {
-    RoundedTextField(searchQuery: .constant(""))
+    CapsuleSearchBar(searchQuery: .constant(""))
 }

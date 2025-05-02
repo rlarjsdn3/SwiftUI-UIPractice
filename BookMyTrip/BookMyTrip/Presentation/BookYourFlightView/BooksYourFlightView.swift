@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+let dateFormtter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "d MMMM yyyy"
+    return formatter
+}()
+
 struct BooksYourFlightView: View {
 
     @Environment(\.dismiss) var dismiss: DismissAction
@@ -23,64 +29,68 @@ struct BooksYourFlightView: View {
                     Spacer()
                 }
                 .padding(.horizontal)
+                .padding(.top, 16)
                 .padding(.bottom, 8)
-                
+
                 VStack(spacing: 18) {
                     VStack(spacing: 18) {
-                        TripOptionButton("From") {
+                        TripOptionView("From") {
                             Text("San Fancisco")
                         } leadingIcon: {
-                            DepartureIndicator()
+                            DepartureIconView()
                         }
-                        .frame(height: 80)
-                        
-                        TripOptionButton("Destination") {
+                        .frame(height: 74)
+
+                        TripOptionView("Destination") {
                             Text("New York")
                         } leadingIcon: {
-                            ArrivalIndicator()
+                            ArrivalIconView()
                         }
-                        .frame(height: 80)
+                        .frame(height: 74)
                     }
                     .padding([.top, .horizontal])
                     .overlay(alignment: .trailing) {
                         Button {
                         } label: {
                             Image(symbol: .arrowUpDown)
-                                .font(.title)
+                                .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.white)
-                                .frame(width: 60, height: 60)
+                                .frame(width: 55, height: 55)
                                 .background {
-                                    RoundedRectangle(cornerRadius: 17.5)
+                                    RoundedRectangle(cornerRadius: 15)
                                         .fill(Color.travelPurple)
                                 }
                         }
+                        .offset(y: 8)
                         .padding(.trailing, 36)
                         .commonShadow(Color.travelPurple)
                     }
-                    
+
                     HStack(spacing: 20) {
-                        TripOptionButton(
+                        TripOptionView(
                             "Passengers",
                             spacing: 14,
-                            edgeInsets: EdgeInsets(vertical: 12, horizontal: 14)) {
+                            cornerRaduis: 12,
+                            edgeInsets: EdgeInsets(vertical: 12, horizontal: 12)) {
                                 Text("2 Adults") // TODO: 선택 메뉴로 수정
                             } leadingIcon: {
                                 Image(symbol: .calendar)
                                     .font(.title3)
                                     .foregroundStyle(Color.travelGray)
                             }
-                        
-                        TripOptionButton("")
+
+                        TripOptionView("")
                             .hidden()
                     }
                     .padding(.horizontal)
-                    
+
                     HStack(spacing: 20) {
-                        TripOptionButton(
+                        TripOptionView(
                             "Departures",
                             spacing: 16,
-                            edgeInsets: EdgeInsets(vertical: 12, horizontal: 14)) {
+                            cornerRaduis: 12,
+                            edgeInsets: EdgeInsets(vertical: 12, horizontal: 12)) {
                                 Text("8 August 2020") // TODO: - 캘린더 선택으로 수정
                                     .font(.caption)
                                     .frame(height: 18)
@@ -89,11 +99,12 @@ struct BooksYourFlightView: View {
                                     .font(.title3)
                                     .foregroundStyle(Color.travelGray)
                             }
-                        
-                        TripOptionButton(
+
+                        TripOptionView(
                             "Class",
                             spacing: 14,
-                            edgeInsets: EdgeInsets(vertical: 12, horizontal: 14)) {
+                            cornerRaduis: 12,
+                            edgeInsets: EdgeInsets(vertical: 12, horizontal: 12)) {
                                 Text("Business") // TODO: 선택 메뉴로 수정
                             } leadingIcon: {
                                 Image(symbol: .chairLoungeFill)
@@ -102,14 +113,18 @@ struct BooksYourFlightView: View {
                             }
                     }
                     .padding(.horizontal)
-                    
+
                     HStack(spacing: 18) {
 
-                        TripOptionButton(edgeInsets: .zero, leadingIcon: {
-                            Image(symbol: .airplane) // TODO: 이미지 수정
-                                .padding(18)
-                        })
-                        
+                        TripOptionView(
+                            cornerRaduis: 14,
+                            edgeInsets: EdgeInsets(vertical: 17, horizontal: 17),
+                            leadingIcon: {
+                                TemplateImage(asset: .discount)
+                                    .foregroundStyle(Color.travelGray)
+                                    .frame(width: 22, height: 22)
+                            })
+
                         Button {
                         } label: {
                             Text("Search The Flight")
@@ -118,15 +133,18 @@ struct BooksYourFlightView: View {
                                 .padding(18)
                                 .frame(maxWidth: .infinity)
                                 .background {
-                                    RoundedRectangle(cornerRadius: 15)
+                                    RoundedRectangle(cornerRadius: 14)
                                         .fill(Color.travelPurple)
                                 }
                         }
-                        
-                        TripOptionButton(edgeInsets: .init(), leadingIcon: {
-                            Image(symbol: .airplane) // TODO: 이미지 수정
-                                .padding(18)
-                        })
+
+                        TripOptionView(
+                            edgeInsets: EdgeInsets(vertical: 17, horizontal: 17),
+                            leadingIcon: {
+                                TemplateImage(asset: .discount)
+                                    .foregroundStyle(Color.travelGray)
+                                    .frame(width: 22, height: 22)
+                            })
                         .hidden()
                     }
                     .padding(.horizontal)
@@ -134,19 +152,67 @@ struct BooksYourFlightView: View {
 
                     ViewAllHeaderView("Recommended") { }
                         .padding(.horizontal)
+
                     ScrollView(.horizontal) {
-                        HStack {
-#warning("추천 여행 스크롤 뷰 구현")
+                        HStack(spacing: 30) {
                             ForEach(appData.recommendedFlights) { flight in
-                                Text(flight.date)
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Image(symbol: .airplane)
+                                            .font(.headline)
+                                            .foregroundStyle(flight.color)
+                                            .rotationEffect(.degrees(-45))
+                                            .padding(6)
+                                            .background(.white, in: RoundedRectangle(cornerRadius: 8))
+
+                                        Spacer()
+                                    }
+                                    .padding(.bottom, 10)
+
+                                    Text(dateFormtter.string(from: flight.date))
+                                        .font(.caption2)
+                                        .fontWeight(.light)
+                                        .foregroundStyle(Color.white)
+
+                                    HStack {
+                                        Text(flight.departure)
+                                            .fontWeight(.semibold)
+                                        Image(symbol: .arrowLeftRight)
+                                            .font(.caption2)
+                                        Text(flight.arrival)
+                                            .fontWeight(.semibold)
+                                    }
+                                    .foregroundStyle(.white)
+                                    .padding(.bottom, 5)
+
+                                    HStack(spacing: 0) {
+                                        Text("$")
+                                        Text("\(flight.price)")
+                                    }
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.white)
+                                }
+                                .padding(.horizontal, 12)
+                                .frame(width: 140)
+                                .frame(maxHeight: 150)
+                                .background(
+                                    LinearGradient(
+                                        stops: [.init(color: flight.color.opacity(0.77), location: 0.0),
+                                                .init(color: flight.color, location: 0.6),
+                                                .init(color: flight.color, location: 1.0)],
+                                        startPoint: .top,
+                                        endPoint: .bottom
+                                    ),
+                                    in: RoundedRectangle(cornerRadius: 20)
+                                )
+                                .commonShadow(flight.color, opacity: 0.55)
                             }
                         }
+                        .padding(.horizontal)
                     }
+                    .scrollClipDisabled(true)
                     .scrollIndicators(.hidden)
-                    .scrollClipDisabled(false)
                 }
-                
-                Spacer()
             }
             .travelNavigationBarTitle("Book Your Flight")
             .travelNavigationBarTitleDisplayMode(.large)

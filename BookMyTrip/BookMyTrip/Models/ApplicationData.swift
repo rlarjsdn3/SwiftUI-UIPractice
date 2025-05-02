@@ -16,7 +16,7 @@ struct PopularPlace: Identifiable {
 
 struct RecommendedFlight: Identifiable {
     let id = UUID()
-    let date: String
+    let date: Date
     let departure: String
     let arrival: String
     let price: Int
@@ -52,11 +52,11 @@ struct ApplicationData {
         ]
 
         recommendedFlights = [
-            .init(date: "17 August 2020", departure: "SFC", arrival: "NYC", price: 2358, color: .travelBlue),
-            .init(date: "17 August 2020", departure: "SFC", arrival: "NYC", price: 3421, color: .travelPurple),
-            .init(date: "17 August 2020", departure: "SFC", arrival: "NYC", price: 6543, color: .travelOrange),
-            .init(date: "17 August 2020", departure: "SFC", arrival: "NYC", price: 1122, color: .travelYellow),
-            .init(date: "17 August 2020", departure: "SFC", arrival: "NYC", price: 1234, color: .travelBlue),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 2358, color: .travelBlue),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 3421, color: .travelPurple),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 6543, color: .travelOrange),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 1122, color: .travelYellow),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 1234, color: .travelBlue),
         ]
 
         tickets = [

@@ -1,5 +1,5 @@
 //
-//  MapPinImage.swift
+//  TemplateImage.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/1/25.
@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-struct MapPinImage: View {
+struct TemplateImage: View {
+    let asset: MyAsset
+
     var body: some View {
-        Image("map-pin")
+        Image(asset: asset)
             .renderingMode(.template)
             .resizable()
             .scaledToFit()
     }
 }
 
-#Preview("Map-Pin Image", traits: .sizeThatFitsLayout) {
-    MapPinImage()
+#Preview("MapPin", traits: .sizeThatFitsLayout) {
+    TemplateImage(asset: .mapPin)
         .frame(width: 64, height: 64)
         .foregroundStyle(Color.travelOrange)
 }

@@ -11,8 +11,8 @@ struct FindDealsView: View {
     
     @State private var searchQuery: String = ""
     
-    var navigationLinkArray: [FindDeals] {
-        FindDeals.allCases
+    var navigationLinkArray: [Deals] {
+        Deals.allCases
     }
     
     var body: some View {
@@ -20,9 +20,10 @@ struct FindDealsView: View {
             VStack(spacing: 0) {
                 topHeaderView
                     .padding()
-                    .padding(.vertical, 14)
+                    .padding(.top, 20)
+                    .padding(.bottom, 14)
 
-                RoundedTextField(searchQuery: $searchQuery)
+                CapsuleSearchBar(searchQuery: $searchQuery)
                     .padding(.horizontal)
                     .padding(.bottom, 24)
 
@@ -30,7 +31,7 @@ struct FindDealsView: View {
                     .padding()
                     .padding(.bottom, 12)
 
-                popularPlacesHeaderView
+                ViewAllHeaderView("Popular places") { }
                     .padding()
                     .padding(.bottom, 6)
 
@@ -38,12 +39,9 @@ struct FindDealsView: View {
                     .padding(.bottom, 2)
             }
             .travelToolBarLayout(leadingToolbar: {
-                TravelToolBarItem( // TODO: 코드 리팩토링
-                    Hamburger().eraseToAnyShape()
-                ) { }
+                TravelToolBarItem(Hamburger().eraseToAnyShape()) { }
                     .frame(width: 25, height: 20)
             })
-
         }
     }
     
@@ -52,7 +50,7 @@ struct FindDealsView: View {
 
     var topHeaderView: some View {
         HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text("Hi, Robert")
                     .font(.title3)
                     .foregroundStyle(.secondary)
@@ -90,9 +88,9 @@ struct FindDealsView: View {
                 Array(navigationLinkArray.enumerated()),
                 id: \.offset
             ) { index, link in
-                FindDealsNavigationLink(link: link)
+                DealNavigationItem(link: link)
 
-                if index != FindDeals.allCases.count - 1 {
+                if index != Deals.allCases.count - 1 {
                     Spacer()
                 }
             }
@@ -117,8 +115,9 @@ struct FindDealsView: View {
         ScrollView(.horizontal) {
             HStack(spacing: -5) {
                 ForEach(appData.popularPlaces) { place in
-                    PopularPlaceCell(place: place)
-                        .frame(width: 250)
+                    PopularPlaceCard(place: place)
+                        .frame(width: 260)
+                        .frame(minHeight: 260, maxHeight: 340)
                         .padding(.horizontal)
                 }
             }

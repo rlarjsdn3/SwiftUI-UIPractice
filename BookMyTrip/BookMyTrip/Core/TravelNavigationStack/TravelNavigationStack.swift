@@ -9,12 +9,18 @@ import SwiftUI
 
 // MARK: - NavigationStack
 
+
+#warning("코드 리팩토링 + 툴바 완벽하게 상단에 고정시키기")
+#warning("viewHeight PreferenceKey 삭제해보기")
+
 ///
 struct TravelNavigationStack<Content>: View where Content: View {
     
     // MARK: Properties
-    
-    @State private var navigationBarHeight: CGFloat = 50
+
+    @State private var viewHeight: CGFloat = 0
+
+    @State private var navigationBarHeight: CGFloat = 30
     @State private var navigationBarTitle: String = ""
     @State private var navigationTitleDisplayMode: NavigationBarItem.TitleDisplayMode = .automatic
     @State private var toolBarLayout: ToolbarLayout? = nil
@@ -33,16 +39,36 @@ struct TravelNavigationStack<Content>: View where Content: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                VStack(spacing: 0) {
-                    navigationToolbar
+                ZStack(alignment: .top) {
+                    VStack(spacing: 0) {
+                        navigationToolbar
+                            .background(Color.yellow)
+                            .padding(.top, 1)
 
-                    if navigationTitleDisplayMode == .large {
-                        largeNavigationTitle
-                            .padding(.top, 4)
+                        if navigationTitleDisplayMode == .large {
+                            largeNavigationTitle
+                                .padding(.top, 14)
+                                .background {
+                                    GeometryReader { geo in
+                                        Color.clear
+                                            .preference(key: ViewHeightPreferenceKey.self, value: geo.size.height)
+                                    }
+                                }
+                        }
+                    }
+                    .onPreferenceChange(ViewHeightPreferenceKey.self) { height in
+                        self.viewHeight = height
                     }
 
                     content()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding(
+                            .top,
+                            navigationTitleDisplayMode == .large
+                            ? navigationBarHeight + viewHeight - 14
+                            : navigationBarHeight
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                        // top alignment for iPhone 16 Pro Max (6.7 inch)
                 }
                 .toolbarVisibility(.hidden, for: .navigationBar)
                 .navigationBarBackButtonHidden()
@@ -79,13 +105,13 @@ struct TravelNavigationStack<Content>: View where Content: View {
             }
             .padding(.trailing)
         }
-        .frame(height: navigationBarHeight)
-        .frame(maxWidth: .infinity)
         .overlay {
             if navigationTitleDisplayMode != .large {
                 inlineNavigationTitle
             }
         }
+        .frame(height: navigationBarHeight)
+        .frame(maxWidth: .infinity)
     }
 
     var inlineNavigationTitle: some View {
@@ -159,25 +185,7 @@ extension View {
 
 // MARK: - Previews
 
-#Preview("NavigationStack with InlineTitle") {
-    TravelNavigationStack {
-        Color.travelLightPurple
-            .travelNavigationBarTitle("Select Ticket")
-            .travelToolBarLayout {
-                TravelToolBarItem(.chevronLeft) {
-                }
-            } trailingToolBar: {
-                TravelToolBarItem(
-                    Hamburger().eraseToAnyShape()
-                ) { }
-                    .frame(width: 25, height: 20)
-            }
-            .ignoresSafeArea()
-
-    }
-}
-
-#Preview("NavigationStack with LargeTitle") {
+#Preview("NavigationStack (Inline)") {
     TravelNavigationStack {
         Color.travelLightPurple
             .travelNavigationBarTitle("Book Your Flight")
@@ -189,7 +197,22 @@ extension View {
                 ) { }
                     .frame(width: 25, height: 20)
             }
-            .ignoresSafeArea()
+
+    }
+}
+
+#Preview("NavigationStack (LargeTitle)") {
+    TravelNavigationStack {
+        Color.travelLightPurple
+            .travelNavigationBarTitle("Book Your Flight")
+            .travelToolBarLayout {
+                TravelToolBarItem(.chevronLeft) { }
+            } trailingToolBar: {
+                TravelToolBarItem(
+                    Hamburger().eraseToAnyShape()
+                ) { }
+                    .frame(width: 25, height: 20)
+            }
             .travelNavigationBarTitleDisplayMode(.large)
     }
 }
