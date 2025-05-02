@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct BooksYourFlightView: View {
+
+    @Environment(\.dismiss) var dismiss: DismissAction
+
     var body: some View {
         TravelNavigationStack {
-            Text("Hello, World!")
-                .travelNavigationBarTitle("Book Your Flight")
-                .travelNavigationBarTitleDisplayMode(.large)
+            VStack(spacing: 0) {
+
+            }
+            .travelNavigationBarTitle("Book Your Flight")
+            .travelNavigationBarTitleDisplayMode(.large)
+            .travelToolBarLayout {
+                TravelToolBarItem(.chevronLeft) {
+                    dismiss()
+                }
+            } trailingToolBar: {
+                TravelToolBarItem(
+                    Hamburger().eraseToAnyShape()
+                ) { }
+                    .frame(width: 25, height: 20)
+            }
         }
     }
 }

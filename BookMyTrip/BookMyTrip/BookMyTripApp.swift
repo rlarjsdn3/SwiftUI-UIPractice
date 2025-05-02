@@ -12,7 +12,7 @@ struct BookMyTripApp: App {
     var body: some Scene {
         WindowGroup {
             FindDealsView()
-                .dynamicTypeSize(.accessibility1 ... .xxxLarge) // TODO: DynamicType 범위 조정하기
+                .dynamicTypeSize(.small ... .xxxLarge) // TODO: DynamicType 범위 조정하기
         }
     }
 }

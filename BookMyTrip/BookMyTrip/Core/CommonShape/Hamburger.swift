@@ -1,5 +1,5 @@
 //
-//  Hamburger3Line.swift
+//  Hamburger.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/1/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Hamburger3Line: Shape {
+struct Hamburger: Shape {
 
     func path(in rect: CGRect) -> Path {
         var path = Path()
@@ -34,5 +34,5 @@ struct Hamburger3Line: Shape {
 
 
 #Preview(traits: .sizeThatFitsLayout) {
-    Hamburger3Line()
+    Hamburger()
 }

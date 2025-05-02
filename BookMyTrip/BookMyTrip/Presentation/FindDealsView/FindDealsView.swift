@@ -11,34 +11,35 @@ struct FindDealsView: View {
     
     @State private var searchQuery: String = ""
     
-    var navigationLinkArray: [FindDealsNavigationLink] {
-        FindDealsNavigationLink.allCases
+    var navigationLinkArray: [FindDeals] {
+        FindDeals.allCases
     }
     
     var body: some View {
         TravelNavigationStack {
-            VStack {
+            VStack(spacing: 0) {
                 topHeaderView
                     .padding()
-                    .padding(.vertical, 6)
+                    .padding(.vertical, 14)
 
                 RoundedTextField(searchQuery: $searchQuery)
                     .padding(.horizontal)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 24)
 
                 findDiealsButtonGroupView
                     .padding()
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 12)
 
                 popularPlacesHeaderView
                     .padding()
+                    .padding(.bottom, 6)
 
                 popularPlacesView
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 2)
             }
             .travelToolBarLayout(leadingToolbar: {
-                TravelToolBarItem(
-                    Hamburger3Line().eraseToAnyShape()
+                TravelToolBarItem( // TODO: 코드 리팩토링
+                    Hamburger().eraseToAnyShape()
                 ) { }
                     .frame(width: 25, height: 20)
             })
@@ -89,13 +90,9 @@ struct FindDealsView: View {
                 Array(navigationLinkArray.enumerated()),
                 id: \.offset
             ) { index, link in
-                NavigationLink {
-                    link.makeDestinationView()
-                } label: {
-                    FindDealsButton(link: link) { }
-                }
+                FindDealsNavigationLink(link: link)
 
-                if index != FindDealsNavigationLink.allCases.count - 1 {
+                if index != FindDeals.allCases.count - 1 {
                     Spacer()
                 }
             }

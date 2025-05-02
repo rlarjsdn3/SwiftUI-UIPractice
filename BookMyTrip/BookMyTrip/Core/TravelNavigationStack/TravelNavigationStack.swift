@@ -38,13 +38,14 @@ struct TravelNavigationStack<Content>: View where Content: View {
 
                     if navigationTitleDisplayMode == .large {
                         largeNavigationTitle
+                            .padding(.top, 4)
                     }
 
                     content()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .toolbarVisibility(.hidden, for: .navigationBar)
-                        .navigationBarBackButtonHidden()
                 }
+                .toolbarVisibility(.hidden, for: .navigationBar)
+                .navigationBarBackButtonHidden()
             }
             .onPreferenceChange(NavigationBarTitlePreferenceKey.self) { title in
                 self.navigationBarTitle = title
@@ -167,7 +168,7 @@ extension View {
                 }
             } trailingToolBar: {
                 TravelToolBarItem(
-                    Hamburger3Line().eraseToAnyShape()
+                    Hamburger().eraseToAnyShape()
                 ) { }
                     .frame(width: 25, height: 20)
             }
@@ -184,7 +185,7 @@ extension View {
                 TravelToolBarItem(.chevronLeft) { }
             } trailingToolBar: {
                 TravelToolBarItem(
-                    Hamburger3Line().eraseToAnyShape()
+                    Hamburger().eraseToAnyShape()
                 ) { }
                     .frame(width: 25, height: 20)
             }

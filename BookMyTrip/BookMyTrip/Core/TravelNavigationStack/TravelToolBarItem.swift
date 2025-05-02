@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+// TODO: 코드 리팩토링하기
+// 툴바 아이템의 목적 - 네비게이션에 맞게 자동으로 크기 및 위치 조절 목적
+#warning("TravelToolBarItem 코드 리팩토링")
+
 struct TravelToolBarItem: View {
     let shape: AnyShapeWrapper?
     let symbol: SFSymbol?
@@ -57,7 +61,7 @@ struct TravelToolBarItem: View {
 
 #Preview(traits: .sizeThatFitsLayout) {
     TravelToolBarItem(
-        Hamburger3Line().eraseToAnyShape()
+        Hamburger().eraseToAnyShape()
     ) { }
         .frame(width: 25, height: 20)
 }
