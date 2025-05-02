@@ -7,16 +7,10 @@
 
 import SwiftUI
 
-// MARK: - PopularPlaceCell
 
 struct PopularPlaceCell: View {
-
-    // MARK: Properties
-
+    
     let place: PopularPlace
-
-
-    // MARK: Body
 
     var body: some View {
         ZStack {
@@ -52,9 +46,7 @@ struct PopularPlaceCell: View {
                 .stroke(Color.travelStroke, lineWidth: 1)
         }
     }
-
-
-    // MARK: Subviews
+    
 
     func placeImage(_ width: CGFloat) -> some View {
         Image(place.resource)

@@ -22,7 +22,7 @@ enum FindDeals: String, CaseIterable {
         }
     }
     
-    var symbol: SFSymbol {
+    var symbol: MySymbol {
         switch self {
         case .airplane: return .airplane
         case .taxi:     return .carFill

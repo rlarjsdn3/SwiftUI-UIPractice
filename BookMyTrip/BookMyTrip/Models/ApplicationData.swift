@@ -14,7 +14,8 @@ struct PopularPlace: Identifiable {
     let resource: String
 }
 
-struct RecommendedFlight {
+struct RecommendedFlight: Identifiable {
+    let id = UUID()
     let date: String
     let departure: String
     let arrival: String

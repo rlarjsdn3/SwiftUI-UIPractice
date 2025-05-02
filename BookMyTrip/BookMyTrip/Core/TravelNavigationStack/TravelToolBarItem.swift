@@ -13,7 +13,7 @@ import SwiftUI
 
 struct TravelToolBarItem: View {
     let shape: AnyShapeWrapper?
-    let symbol: SFSymbol?
+    let symbol: MySymbol?
     let action: () -> Void
 
     init(
@@ -26,7 +26,7 @@ struct TravelToolBarItem: View {
     }
 
     init(
-        _ symbol: SFSymbol,
+        _ symbol: MySymbol,
         action: @escaping () -> Void
     ) {
         self.shape = nil

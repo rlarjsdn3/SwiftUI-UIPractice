@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+#warning("CommonShaodw 이름 바꾸기")
+
 struct CommonShadow: ViewModifier {
     
     let color: Color
@@ -14,12 +16,7 @@ struct CommonShadow: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .shadow(
-                color: color.opacity(opacity),
-                radius: 10,
-                x: 5,
-                y: 5
-            )
+            .shadow(color: color.opacity(opacity), radius: 10, x: 5, y: 5)
     }
 }
 

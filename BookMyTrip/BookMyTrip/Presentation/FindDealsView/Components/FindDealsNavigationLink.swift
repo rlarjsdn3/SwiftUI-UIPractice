@@ -10,9 +10,7 @@ import SwiftUI
 struct FindDealsNavigationLink: View {
     var link: FindDeals
 
-    init(
-        link: FindDeals,
-    ) {
+    init(link: FindDeals) {
         self.link = link
     }
 
