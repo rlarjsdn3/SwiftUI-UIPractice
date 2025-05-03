@@ -20,20 +20,20 @@ struct TripTypeButton: View {
             HStack(spacing: 16) {
                 Image(symbol: icon)
                     .font(.caption2)
-                    .foregroundStyle(isSelected ? Color.white : Color.travelGray)
+                    .foregroundStyle(isSelected ? Color.white : Color.tripGray)
                     .background {
                         Circle()
-                            .fill(isSelected ? tint : Color.travelGray.opacity(0.11))
+                            .fill(isSelected ? tint : Color.tripGray.opacity(0.11))
                             .frame(width: 24, height: 24)
                     }
 
                 Text(label)
                     .font(.footnote)
-                    .foregroundStyle(isSelected ? Color.travelPurple : Color.travelGray)
+                    .foregroundStyle(isSelected ? Color.tripPurple : Color.tripGray)
             }
             .padding(.vertical, 10)
             .padding(.horizontal, 14)
-            .background(Color.travelSecondary, in: Capsule())
+            .background(Color.tripSecondary, in: Capsule())
         }
     }
 }
@@ -43,7 +43,7 @@ struct TripTypeButton: View {
     TripTypeButton(
         label: "One Way",
         icon: .arrowRight,
-        tint: .travelPurple,
+        tint: .tripPurple,
         isSelected: false,
         action: {}
     )
@@ -53,7 +53,7 @@ struct TripTypeButton: View {
     TripTypeButton(
         label: "Round Trip",
         icon: .arrowLeftRight,
-        tint: .travelPurple,
+        tint: .tripPurple,
         isSelected: true,
         action: {}
     )

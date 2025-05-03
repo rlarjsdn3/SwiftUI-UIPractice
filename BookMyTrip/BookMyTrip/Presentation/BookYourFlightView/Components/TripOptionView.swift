@@ -41,7 +41,7 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(label)
                             .font(.footnote)
-                            .foregroundStyle(Color.travelGray)
+                            .foregroundStyle(.tripGray)
                         
                         subLabel()
                             .font(.subheadline)
@@ -57,17 +57,17 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
         .padding(.bottom, edgeInsets.bottom)
         .background {
             RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(Color.travelSecondary)
+                .fill(.tripSecondary)
         }
         .overlay {
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(Color.travelStroke, lineWidth: 1)
+                .stroke(.tripStroke, lineWidth: 1)
         }
         .shadow()
     }
 }
 
-#Preview("TripOptionButton #1", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     TripOptionView("From") {
         Text("San Francisco")
     } leadingIcon: {
@@ -78,7 +78,7 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
     .frame(maxWidth: .infinity)
 }
 
-#Preview("TripOptionButton #2", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     TripOptionView(
         "Class",
         spacing: 18,
@@ -88,20 +88,20 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
             Menu("Business") {
                 Button {
                 } label: {
-                    Label("Business",systemImage: "2.circle.fill")
+                    Label("Business", systemImage: "2.circle.fill")
                 }
             }
-            .foregroundStyle(Color.label)
+            .foregroundStyle(.label)
             
             Image(systemName: "chevron.down")
                 .font(.caption2)
-                .foregroundStyle(Color.travelGray)
+                .foregroundStyle(.tripGray)
                 .offset(y: 2)
         }
     } leadingIcon: {
         Image(symbol: .chairLoungeFill)
             .font(.title2)
-            .foregroundStyle(Color.travelGray)
+            .foregroundStyle(.tripGray)
     }
     .frame(width: 200)
 }

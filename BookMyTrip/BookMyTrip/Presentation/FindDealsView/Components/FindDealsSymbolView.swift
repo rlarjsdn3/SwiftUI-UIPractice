@@ -33,10 +33,10 @@ enum FindDeals: String, CaseIterable {
 
     var tint: Color {
         switch self {
-        case .airplane: return .travelPurple
-        case .taxi:     return .travelYellow
-        case .hotel:    return .travelOrange
-        case .ellipsis: return .travelBlue
+        case .airplane: return .tripPurple
+        case .taxi:     return .tripYellow
+        case .hotel:    return .tripOrange
+        case .ellipsis: return .tripBlue
         }
     }
 }

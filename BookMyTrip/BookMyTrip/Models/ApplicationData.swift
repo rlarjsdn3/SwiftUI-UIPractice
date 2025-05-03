@@ -29,8 +29,6 @@ struct Ticket: Identifiable {
     let routePlan: [RoutePlan]
 }
 
-#warning("duration을 Date나 Duration으로 바꿔보기")
-
 struct RoutePlan: Identifiable {
     let id = UUID()
     let departure: String
@@ -56,11 +54,11 @@ struct ApplicationData {
         ]
 
         recommendedFlights = [
-            .init(date: .now, departure: "SFC", arrival: "NYC", price: 2358, color: .travelBlue),
-            .init(date: .now, departure: "SFC", arrival: "NYC", price: 3421, color: .travelPurple),
-            .init(date: .now, departure: "SFC", arrival: "NYC", price: 6543, color: .travelOrange),
-            .init(date: .now, departure: "SFC", arrival: "NYC", price: 1122, color: .travelYellow),
-            .init(date: .now, departure: "SFC", arrival: "NYC", price: 1234, color: .travelBlue),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 2358, color: .tripBlue),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 3421, color: .tripPurple),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 6543, color: .tripOrange),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 1122, color: .tripYellow),
+            .init(date: .now, departure: "SFC", arrival: "NYC", price: 1234, color: .tripBlue),
         ]
 
         tickets = [

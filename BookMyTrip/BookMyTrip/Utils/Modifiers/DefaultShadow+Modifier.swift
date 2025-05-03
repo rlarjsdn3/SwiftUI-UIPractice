@@ -21,7 +21,7 @@ struct DefaultShadow: ViewModifier {
 extension View {
     
     func shadow(
-        _ color: Color = .travelGray,
+        _ color: Color = .tripGray,
         opacity: Double = 0.44
     ) -> some View {
         modifier(DefaultShadow(color: color, opacity: opacity))

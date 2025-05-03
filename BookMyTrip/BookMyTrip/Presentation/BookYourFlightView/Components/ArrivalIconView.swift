@@ -15,10 +15,10 @@ struct ArrivalIconView: View {
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()
-                .foregroundStyle(Color.travelGray)
+                .foregroundStyle(.tripGray)
                 .frame(width: 15, height: 15)
         }
-        .foregroundStyle(Color.travelGray)
+        .foregroundStyle(Color.tripGray)
     }
 }
 

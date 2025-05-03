@@ -20,7 +20,7 @@ enum TripWay: CaseIterable {
 
     var symbol: MySymbol {
         switch self {
-        case .oneWay:   return MySymbol.arrowRight
+        case .oneWay:    return MySymbol.arrowRight
         case .roundTrip: return MySymbol.arrowLeftRight
         }
     }
@@ -57,7 +57,7 @@ struct TripWayButton: View {
         TripTypeButton(
             label: tripType.title,
             icon: tripType.symbol,
-            tint: .travelPurple,
+            tint: .tripPurple,
             isSelected: selectedTripType == tripType,
             action: {
                 selectedTripType = tripType
@@ -67,6 +67,6 @@ struct TripWayButton: View {
     }
 }
 
-#Preview("TripWayButton", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     TripWayButton(.oneWay, selectedTripType: .constant(.oneWay)) { }
 }

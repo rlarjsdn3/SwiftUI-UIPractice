@@ -24,23 +24,23 @@ struct CapsuleSearchBar: View {
                 text: $searchQuery,
                 prompt: placeholderText
             )
-            .tint(Color.travelGray)
+            .tint(.tripGray)
         }
         .padding()
-        .background(Color.travelSecondary, in: .capsule)
+        .background(.tripSecondary, in: .capsule)
     }
     
     private var magnifyingGlassImage: some View {
         Image(symbol: .magnifyingGlass)
             .font(.title3)
             .fontWeight(.semibold)
-            .foregroundStyle(Color.travelGray)
+            .foregroundStyle(.tripGray)
     }
     
     private var placeholderText: Text {
         Text("Search Flight, Hotels, etc...")
             .font(.subheadline)
-            .foregroundStyle(Color.travelGray)
+            .foregroundStyle(Color.tripGray)
     }
 }
 

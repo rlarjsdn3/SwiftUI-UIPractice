@@ -53,10 +53,10 @@ struct HorizontalLine: Shape, StrokeConfigurable {
     }
 }
 
-#Preview("HorizontalLine #1", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     HorizontalLine(lineWidth: 2, lineCap: .square, dash: [5, 10])
 }
 
-#Preview("HorizontalLine #2", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     HorizontalLine(lineWidth: 2, lineCap: .round, dash: [0.5, 8])
 }

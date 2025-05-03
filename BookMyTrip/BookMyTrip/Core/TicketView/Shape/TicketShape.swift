@@ -72,7 +72,7 @@ struct TicketShape: Shape {
         ellipsisOffset: 100,
         cornerRadius: 30
     )
-    .fill(Color.gray)
+    .fill(.gray)
     .frame(height: 350)
     .padding()
 }

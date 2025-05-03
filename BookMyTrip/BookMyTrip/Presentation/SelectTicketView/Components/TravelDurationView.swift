@@ -25,7 +25,7 @@ struct TravelDurationView: View {
                 .scaledToFit()
                 .frame(width: 12, height: 12)
         }
-        .foregroundStyle(Color.travelGray)
+        .foregroundStyle(.tripGray)
     }
 
     private var flightDurationLabel: some View {
@@ -33,7 +33,7 @@ struct TravelDurationView: View {
             Text(duration)
                 .font(.caption2)
                 .fontWeight(.medium)
-                .foregroundStyle(Color.travelGray)
+                .foregroundStyle(.tripGray)
 
             HStack(spacing: 4) {
                 horizontalLine

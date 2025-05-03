@@ -67,14 +67,14 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
             cornerRadius: cornerRadius
         )
         .shadow()
-        .foregroundStyle(Color.travelSecondary)
+        .foregroundStyle(.tripSecondary)
         .overlay {
             TicketShape(
                 ellipsisSize: ellipsisSize,
                 ellipsisOffset: ellipsisOffset,
                 cornerRadius: cornerRadius
             )
-            .stroke(Color.travelStroke, lineWidth: 1)
+            .stroke(.tripStroke, lineWidth: 1)
         }
     }
     
@@ -93,7 +93,7 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
                 miterLimit: 10,
                 dash: [4, 10]
             )
-            .fill(Color.travelGray)
+            .fill(.tripGray)
             Spacer(minLength: horizontalLinePadding)
         }
     }
@@ -109,7 +109,7 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
 
 // MARK: - Previews
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     TicketView {
         Text("Hello, TicketView!")
             .padding(.top, 5)

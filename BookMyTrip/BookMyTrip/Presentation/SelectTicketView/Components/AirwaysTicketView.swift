@@ -29,9 +29,9 @@ struct AirwaysTicketView: View {
         HStack {
             Image(symbol: .airplane)
                 .rotationEffect(.degrees(-45))
-                .foregroundStyle(Color.white)
+                .foregroundStyle(.white)
                 .padding(12)
-                .background(Color.travelGray, in: Circle())
+                .background(Color.tripGray, in: Circle())
 
             Text("Airways")
                 .font(.title2)
@@ -70,7 +70,7 @@ struct AirwaysTicketView: View {
             Text("Arrive")
         }
         .font(.footnote)
-        .foregroundStyle(Color.travelGray)
+        .foregroundStyle(.tripGray)
     }
     
     private func deparetureArrivalRow(_ route: RoutePlan) -> some View {
@@ -92,7 +92,7 @@ struct AirwaysTicketView: View {
         VStack(alignment: .leading, spacing: 6) {
             Text(time)
             Text(location)
-                .foregroundStyle(Color.travelGray)
+                .foregroundStyle(.tripGray)
         }
         .font(.footnote)
         .fontWeight(.semibold)

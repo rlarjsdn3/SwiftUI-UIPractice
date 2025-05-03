@@ -29,7 +29,7 @@ struct ViewAllHeaderView: View {
                 action()
             }
             .fontWeight(.medium)
-            .foregroundStyle(Color.travelGray)
+            .foregroundStyle(.tripGray)
         }
     }
 }

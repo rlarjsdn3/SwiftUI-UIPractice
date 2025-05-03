@@ -62,9 +62,9 @@ struct FindDealsView: View {
 
             Image(symbol: .personFill)
                 .imageScale(.large)
-                .foregroundStyle(Color.white)
+                .foregroundStyle(.white)
                 .padding(14)
-                .background(Color.travelLightPurple, in: .circle)
+                .background(.tripLightPurple, in: .circle)
                 .overlay(alignment: .topTrailing) {
                     ZStack {
                         Circle()
@@ -72,7 +72,7 @@ struct FindDealsView: View {
                             .frame(width: 12, height: 12)
 
                         Circle()
-                            .fill(Color.travelBlue)
+                            .fill(.tripBlue)
                             .frame(width: 7.5, height: 7.5)
                     }
                     .offset(x: -2, y: 2)
@@ -94,7 +94,7 @@ struct FindDealsView: View {
                         
                         Text(link.title)
                             .font(.subheadline)
-                            .foregroundStyle(Color.label)
+                            .foregroundStyle(.label)
                     }
                     
                 }
@@ -116,7 +116,7 @@ struct FindDealsView: View {
 
             Button("View All") { }
                 .fontWeight(.medium)
-                .foregroundStyle(Color.travelGray)
+                .foregroundStyle(.tripGray)
         }
     }
 

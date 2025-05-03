@@ -34,7 +34,7 @@ struct TripToolBarItem: View {
                 }
             }
             .font(.title3)
-            .foregroundStyle(Color.label)
+            .foregroundStyle(.label)
         }
     }
 }
@@ -45,5 +45,4 @@ struct TripToolBarItem: View {
 
 #Preview(traits: .sizeThatFitsLayout) {
     TripToolBarItem(.symbol(.airplane)) { }
-        .frame(width: 25, height: 20)
 }

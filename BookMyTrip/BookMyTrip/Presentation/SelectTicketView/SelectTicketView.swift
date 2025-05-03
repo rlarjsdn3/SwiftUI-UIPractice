@@ -41,7 +41,7 @@ struct SelectTicketView: View {
         VStack(alignment: .leading, spacing: -2) {
             Text("Your Trip")
                 .font(.footnote)
-                .foregroundStyle(Color.travelGray)
+                .foregroundStyle(.tripGray)
             HStack {
                 Text("SFO - NYC")
                     .font(.title2)
@@ -50,9 +50,9 @@ struct SelectTicketView: View {
                     .disabled(true)
                     .scaleEffect(0.8)
             }
-            Text("5 July 2020")
+            Text(Date.now.format(.dMMMMyyyy))
                 .font(.footnote)
-                .foregroundStyle(Color.travelGray)
+                .foregroundStyle(.tripGray)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -68,7 +68,7 @@ struct SelectTicketView: View {
     
     private var checkoutButton: some View {
         MainActionButton("Checkout") { }
-            .shadow(Color.travelPurple, opacity: 0.55)
+            .shadow(.tripPurple, opacity: 0.55)
     }
 }
 

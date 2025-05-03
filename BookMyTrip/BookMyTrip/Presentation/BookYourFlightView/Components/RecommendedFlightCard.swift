@@ -44,8 +44,7 @@ struct RecommendedFlightCard: View {
     
     @ViewBuilder
     private var flightCompactInfo: some View {
-#warning("Date 확장으로 빼기")
-        Text(dateFormtter.string(from: flight.date))
+        Text(flight.date.format(.dMMMMyyyy))
             .font(.caption2)
             .fontWeight(.light)
             .foregroundStyle(Color.white)

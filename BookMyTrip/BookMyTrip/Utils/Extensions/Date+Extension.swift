@@ -6,3 +6,24 @@
 //
 
 import Foundation
+
+extension Date {
+
+    enum Format: String {
+        case dMMMMyyyy = "d MMMM yyyy"
+    }
+
+    func format(_ toString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = "en_us"
+        formatter.dateFormat = toString
+        return formatter.string(from: self)
+    }
+
+    func format(_ toString: Date.Format) -> String {
+        format(toString.rawValue)
+    }
+}
+
+
+

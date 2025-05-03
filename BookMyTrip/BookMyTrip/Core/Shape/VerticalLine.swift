@@ -53,18 +53,10 @@ struct VerticalLine: Shape, StrokeConfigurable {
     }
 }
 
-#Preview("VerticalLine #1", traits: .sizeThatFitsLayout) {
-    VerticalLine(
-        lineWidth: 2,
-        lineCap: .square,
-        dash: [5, 10]
-    )
+#Preview(traits: .sizeThatFitsLayout) {
+    VerticalLine(lineWidth: 2, lineCap: .square, dash: [5, 10])
 }
 
-#Preview("VerticalLine #2", traits: .sizeThatFitsLayout) {
-    VerticalLine(
-        lineWidth: 1,
-        lineCap: .round,
-        dash: [0.5, 3]
-    )
+#Preview(traits: .sizeThatFitsLayout) {
+    VerticalLine(lineWidth: 1, lineCap: .round, dash: [0.5, 3])
 }

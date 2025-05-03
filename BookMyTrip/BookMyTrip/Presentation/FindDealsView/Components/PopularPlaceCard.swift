@@ -14,7 +14,7 @@ struct PopularPlaceCard: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 27.5)
-                .fill(Color.travelSecondary)
+                .fill(.tripSecondary)
             
             placeContentView
                 .padding(15)
@@ -25,7 +25,7 @@ struct PopularPlaceCard: View {
         }
         .overlay {
             RoundedRectangle(cornerRadius: 27.5)
-                .stroke(Color.travelStroke, lineWidth: 1)
+                .stroke(.tripStroke, lineWidth: 1)
         }
     }
     

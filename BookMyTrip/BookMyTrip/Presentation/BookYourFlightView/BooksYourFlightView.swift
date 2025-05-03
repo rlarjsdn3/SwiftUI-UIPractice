@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-#warning("dateFormatter를 Date Extension으로 빼보기")
-
-let dateFormtter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "d MMMM yyyy"
-    return formatter
-}()
-
 struct BooksYourFlightView: View {
 
     @Environment(\.dismiss) var dismiss: DismissAction
@@ -80,10 +72,10 @@ struct BooksYourFlightView: View {
                 .frame(width: 55, height: 55)
                 .background {
                     RoundedRectangle(cornerRadius: 15)
-                        .fill(Color.travelPurple)
+                        .fill(.tripPurple)
                 }
         }
-        .shadow(Color.travelPurple)
+        .shadow(Color.tripPurple)
     }
     
     private var routSelectionView: some View {
@@ -120,7 +112,7 @@ struct BooksYourFlightView: View {
                 } leadingIcon: {
                     Image(symbol: .calendar)
                         .font(.title3)
-                        .foregroundStyle(Color.travelGray)
+                        .foregroundStyle(.tripGray)
                 }
 
             TripOptionView("")
@@ -142,7 +134,7 @@ struct BooksYourFlightView: View {
                 } leadingIcon: {
                     Image(symbol: .personFill)
                         .font(.title3)
-                        .foregroundStyle(Color.travelGray)
+                        .foregroundStyle(.tripGray)
                 }
 
             TripOptionView(
@@ -155,7 +147,7 @@ struct BooksYourFlightView: View {
                 } leadingIcon: {
                     Image(symbol: .chairLoungeFill)
                         .font(.title3)
-                        .foregroundStyle(Color.travelGray)
+                        .foregroundStyle(.tripGray)
                 }
         }
     }
@@ -170,7 +162,7 @@ struct BooksYourFlightView: View {
                         .renderingMode(.template)
                         .resizable()
                         .scaledToFit()
-                        .foregroundStyle(Color.travelGray)
+                        .foregroundStyle(.tripGray)
                         .frame(width: 22, height: 22)
                 })
 
@@ -183,7 +175,7 @@ struct BooksYourFlightView: View {
                         .renderingMode(.template)
                         .resizable()
                         .scaledToFit()
-                        .foregroundStyle(Color.travelGray)
+                        .foregroundStyle(.tripGray)
                         .frame(width: 22, height: 22)
                 }
             )

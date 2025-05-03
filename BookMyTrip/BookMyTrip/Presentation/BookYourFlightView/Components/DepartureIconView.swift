@@ -15,7 +15,7 @@ struct DepartureIconView: View {
                 .rotationEffect(.degrees(90))
             VerticalLine(lineCap: .round, dash: [1, 2])
         }
-        .foregroundStyle(Color.travelGray)
+        .foregroundStyle(.tripGray)
     }
 }
 

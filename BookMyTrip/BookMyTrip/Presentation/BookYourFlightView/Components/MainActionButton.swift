@@ -15,7 +15,7 @@ struct MainActionButton: View {
 
     init(
         _ label: String,
-        tint: Color = Color.travelPurple,
+        tint: Color = Color.tripPurple,
         action: @escaping () -> Void
     ) {
         self.label = label
@@ -34,7 +34,7 @@ struct MainActionButton: View {
                 .frame(maxWidth: .infinity)
                 .background {
                     RoundedRectangle(cornerRadius: 14)
-                        .fill(Color.travelPurple)
+                        .fill(.tripPurple)
                 }
         }
     }
