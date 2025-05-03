@@ -25,9 +25,11 @@ struct ViewAllHeaderView: View {
 
             Spacer()
 
-            Button("View All") { }
-                .fontWeight(.medium)
-                .foregroundStyle(Color.travelGray)
+            Button("View All") {
+                action()
+            }
+            .fontWeight(.medium)
+            .foregroundStyle(Color.travelGray)
         }
     }
 }

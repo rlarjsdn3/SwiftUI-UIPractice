@@ -74,7 +74,7 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
             ellipsisOffset: ellipsisOffset,
             cornerRadius: cornerRadius
         )
-        .commonShadow()
+        .shadow()
         .foregroundStyle(Color.travelSecondary)
         .overlay {
             TicketShape(

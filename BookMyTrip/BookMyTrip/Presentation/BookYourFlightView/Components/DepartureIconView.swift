@@ -19,7 +19,7 @@ struct DepartureIconView: View {
     }
 }
 
-#Preview("From Side Image", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     DepartureIconView()
         .frame(height: 50)
 }

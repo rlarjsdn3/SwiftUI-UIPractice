@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TravelDurationView: View {
+    
     let duration: String
 
     var body: some View {
@@ -15,32 +16,31 @@ struct TravelDurationView: View {
             Image(symbol: .airplane)
                 .font(.caption)
 
-            durationTextLine
+            flightDurationLabel
                 .offset(y: -8)
 
-            TemplateImage(asset: .mapPin)
+            Image(asset: .mapPin)
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
                 .frame(width: 12, height: 12)
         }
         .foregroundStyle(Color.travelGray)
     }
 
-    private var durationTextLine: some View {
+    private var flightDurationLabel: some View {
         VStack(spacing: 3) {
             Text(duration)
                 .font(.caption2)
                 .fontWeight(.medium)
                 .foregroundStyle(Color.travelGray)
 
-            horizontalDashLine
-        }
-    }
-
-    private var horizontalDashLine: some View {
-        HStack(spacing: 4) {
-            horizontalLine
-            Circle()
-                .frame(width: 6, height: 6)
-            horizontalLine
+            HStack(spacing: 4) {
+                horizontalLine
+                Circle()
+                    .frame(width: 6, height: 6)
+                horizontalLine
+            }
         }
     }
 

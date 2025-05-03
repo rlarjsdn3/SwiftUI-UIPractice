@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ToolbarLayout: Equatable {
+// How to make `ToolbarLayout` be Sendable?
+struct ToolbarLayout: Equatable, @unchecked Sendable {
     let leadingToolbar: AnyViewWrapper?
     let leadingSpacing: CGFloat?
     let trarilingToolbar: AnyViewWrapper?

@@ -10,60 +10,68 @@ import SwiftUI
 struct PopularPlaceCard: View {
     
     let place: PopularPlace
-
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 27.5)
                 .fill(Color.travelSecondary)
-
-            VStack {
-                GeometryReader { geo in
-                    placeImage(geo.frame(in: .local).width)
-                        .padding(.bottom, 12.5)
-                }
-
-                VStack(alignment: .leading) {
-                    Text(place.title)
-                        .font(.title3)
-                        .fontWeight(.bold)
-
-                    Text("Distance to \(String(format: "%.2f", place.distance)) mi")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.bottom, 17.5)
-            }
-            .padding(15)
+            
+            placeContentView
+                .padding(15)
         }
-        .background(
+        .background {
             RoundedRectangle(cornerRadius: 27.5)
-                .commonShadow()
-        )
+                .shadow()
+        }
         .overlay {
             RoundedRectangle(cornerRadius: 27.5)
                 .stroke(Color.travelStroke, lineWidth: 1)
         }
     }
     
+    
+    private var placeContentView: some View {
+        VStack {
+            placeImageView
+                .padding(.bottom, 12.5)
+            
+            placeInfoView
+                .padding(.bottom, 17.5)
+        }
+    }
+    
+    private var placeImageView: some View {
+        GeometryReader { geo in
+            Image(place.resource)
+                .resizable()
+                .scaledToFill()
+                .frame(width: geo.size.width)
+                .clipShape(RoundedRectangle.cornerRadius20)
+                .overlay(alignment: .topTrailing) {
+                    Image(symbol: .bookmarkFill)
+                        .font(.caption)
+                        .foregroundStyle(.white)
+                        .padding(5)
+                        .background(
+                            .white.opacity(0.5),
+                            in: .circle
+                        )
+                        .padding(12.5)
+                }
+        }
+    }
+    
+    private var placeInfoView: some View {
+        VStack(alignment: .leading) {
+            Text(place.title)
+                .font(.title3)
+                .fontWeight(.bold)
 
-    func placeImage(_ width: CGFloat) -> some View {
-        Image(place.resource)
-            .resizable()
-            .scaledToFill()
-            .frame(width: width)
-            .clipShape(RoundedRectangle.cornerRadius20)
-            .overlay(alignment: .topTrailing) {
-                Image(symbol: .bookmarkFill)
-                    .font(.caption)
-                    .foregroundStyle(.white)
-                    .padding(5)
-                    .background(
-                        .white.opacity(0.5),
-                        in: .circle
-                    )
-                    .padding(12.5)
-            }
+            Text("Distance to \(String(format: "%.2f", place.distance)) mi")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
 }

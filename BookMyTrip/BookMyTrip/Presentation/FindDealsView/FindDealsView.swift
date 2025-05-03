@@ -11,14 +11,14 @@ struct FindDealsView: View {
     
     @State private var searchQuery: String = ""
     
-    var navigationLinkArray: [Deals] {
-        Deals.allCases
+    var navigationLinkArray: [FindDeals] {
+        FindDeals.allCases
     }
     
     var body: some View {
         TravelNavigationStack {
             VStack(spacing: 0) {
-                topHeaderView
+                navigationHeaderView
                     .padding()
                     .padding(.top, 20)
                     .padding(.bottom, 14)
@@ -46,9 +46,8 @@ struct FindDealsView: View {
     }
     
     
-    // MARK: Subviews
 
-    var topHeaderView: some View {
+    var navigationHeaderView: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
                 Text("Hi, Robert")
@@ -66,11 +65,11 @@ struct FindDealsView: View {
                 .imageScale(.large)
                 .foregroundStyle(Color.white)
                 .padding(14)
-                .background(Color.travelLightPurple, in: Circle())
+                .background(Color.travelLightPurple, in: .circle)
                 .overlay(alignment: .topTrailing) {
                     ZStack {
                         Circle()
-                            .fill(Color.white)
+                            .fill(.white)
                             .frame(width: 12, height: 12)
 
                         Circle()
@@ -88,9 +87,20 @@ struct FindDealsView: View {
                 Array(navigationLinkArray.enumerated()),
                 id: \.offset
             ) { index, link in
-                DealNavigationItem(link: link)
+                NavigationLink {
+                    BooksYourFlightView()
+                } label: {
+                    VStack {
+                        FindDealsSymbolView(link: link)
+                        
+                        Text(link.title)
+                            .font(.subheadline)
+                            .foregroundStyle(Color.label)
+                    }
+                    
+                }
 
-                if index != Deals.allCases.count - 1 {
+                if index != FindDeals.allCases.count - 1 {
                     Spacer()
                 }
             }

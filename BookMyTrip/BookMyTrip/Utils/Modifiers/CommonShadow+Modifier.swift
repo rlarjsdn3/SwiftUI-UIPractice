@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-#warning("CommonShaodw 이름 바꾸기")
-
-struct CommonShadow: ViewModifier {
+struct DefaultShadow: ViewModifier {
     
     let color: Color
     let opacity: Double
@@ -22,15 +20,10 @@ struct CommonShadow: ViewModifier {
 
 extension View {
     
-    func commonShadow(
+    func shadow(
         _ color: Color = .travelGray,
-        opacity: Double = 0.33
+        opacity: Double = 0.44
     ) -> some View {
-        self.modifier(
-            CommonShadow(
-                color: color,
-                opacity: opacity
-            )
-        )
+        modifier(DefaultShadow(color: color, opacity: opacity))
     }
 }

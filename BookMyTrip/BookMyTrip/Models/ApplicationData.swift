@@ -79,7 +79,6 @@ struct ApplicationData {
         ]
     }
 }
-
 let appData = ApplicationData()
 
 

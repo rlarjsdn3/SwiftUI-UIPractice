@@ -11,17 +11,18 @@ struct ArrivalIconView: View {
     var body: some View {
         VStack(spacing: 3) {
             VerticalLine(lineCap: .round, dash: [1, 2])
-            TemplateImage(asset: .mapPin)
+            Image(asset: .mapPin)
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
                 .foregroundStyle(Color.travelGray)
                 .frame(width: 15, height: 15)
         }
-        .frame(width: 30)
         .foregroundStyle(Color.travelGray)
-        .clipped()
     }
 }
 
-#Preview("Destination Side Image", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     ArrivalIconView()
         .frame(height: 50)
 }

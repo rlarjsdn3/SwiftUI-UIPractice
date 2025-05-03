@@ -63,7 +63,7 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .stroke(Color.travelStroke, lineWidth: 1)
         }
-        .commonShadow()
+        .shadow()
     }
 }
 
@@ -87,14 +87,11 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
         HStack {
             Menu("Business") {
                 Button {
-                    
                 } label: {
-                    Label(
-                        "Business",
-                        systemImage: "2.circle.fill"
-                    )
+                    Label("Business",systemImage: "2.circle.fill")
                 }
             }
+            .foregroundStyle(Color.label)
             
             Image(systemName: "chevron.down")
                 .font(.caption2)

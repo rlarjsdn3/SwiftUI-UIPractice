@@ -14,41 +14,16 @@ struct SelectTicketView: View {
     var body: some View {
         TravelNavigationStack {
             VStack {
+                tripHeadlineView
+                    .padding()
+                    .padding(.vertical, 12)
 
-                VStack(alignment: .leading, spacing: -2) {
-                    Text("Your Trip")
-                        .font(.footnote)
-                        .foregroundStyle(Color.travelGray)
-                    HStack {
-                        Text("SFO - NYC")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        TripWayButton(.oneWay)
-                            .disabled(true)
-                            .scaleEffect(0.8)
-                    }
-                    Text("5 July 2020")
-                        .font(.footnote)
-                        .foregroundStyle(Color.travelGray)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
-                .padding(.vertical, 12)
-
-
-                VStack(spacing: 30) {
-                    ForEach(appData.tickets) { ticket in
-                        AirwaysTicketView(ticket: ticket)
-                            .padding(.horizontal)
-                    }
-                }
+                ticketsScrollView
 
                 Spacer()
 
-                PrimaryButton("Checkout") { }
-                    .commonShadow(Color.travelPurple, opacity: 0.55)
+                checkoutButton
                     .padding(.horizontal)
-
             }
             .travelNavigationBarTitle("Select Ticket")
             .travelToolBarLayout {
@@ -61,6 +36,41 @@ struct SelectTicketView: View {
                 .frame(width: 25, height: 20)
             }
         }
+    }
+    
+    
+    private var tripHeadlineView: some View {
+        VStack(alignment: .leading, spacing: -2) {
+            Text("Your Trip")
+                .font(.footnote)
+                .foregroundStyle(Color.travelGray)
+            HStack {
+                Text("SFO - NYC")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                TripWayButton(.oneWay)
+                    .disabled(true)
+                    .scaleEffect(0.8)
+            }
+            Text("5 July 2020")
+                .font(.footnote)
+                .foregroundStyle(Color.travelGray)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    private var ticketsScrollView: some View {
+        VStack(spacing: 30) {
+            ForEach(appData.tickets) { ticket in
+                AirwaysTicketView(ticket: ticket)
+                    .padding(.horizontal)
+            }
+        }
+    }
+    
+    private var checkoutButton: some View {
+        MainActionButton("Checkout") { }
+            .shadow(Color.travelPurple, opacity: 0.55)
     }
 }
 

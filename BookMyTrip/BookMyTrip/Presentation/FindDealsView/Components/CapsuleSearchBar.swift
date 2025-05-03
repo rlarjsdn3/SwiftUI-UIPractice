@@ -16,23 +16,31 @@ struct CapsuleSearchBar: View {
 
     var body: some View {
         HStack {
-            Image(symbol: .magnifyingGlass)
-                .font(.title3)
-                .fontWeight(.semibold)
-                .foregroundStyle(Color.travelGray)
+            magnifyingGlassImage
                 .padding(.leading, 7.5)
 
             TextField(
                 "SearchQuery",
                 text: $searchQuery,
-                prompt: Text("Search Flight, Hotels, etc...")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.travelGray)
+                prompt: placeholderText
             )
             .tint(Color.travelGray)
         }
         .padding()
-        .background(Color.travelSecondary, in: Capsule())
+        .background(Color.travelSecondary, in: .capsule)
+    }
+    
+    private var magnifyingGlassImage: some View {
+        Image(symbol: .magnifyingGlass)
+            .font(.title3)
+            .fontWeight(.semibold)
+            .foregroundStyle(Color.travelGray)
+    }
+    
+    private var placeholderText: Text {
+        Text("Search Flight, Hotels, etc...")
+            .font(.subheadline)
+            .foregroundStyle(Color.travelGray)
     }
 }
 

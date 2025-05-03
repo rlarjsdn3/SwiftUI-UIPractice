@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-#warning("TemplateImage 존치 여부 결정")
-
+@available(*, deprecated, message: "삭제될 코드")
 struct TemplateImage: View {
     let asset: MyAsset
 

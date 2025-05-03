@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-#warning("SFSymbol 코드 리팩토링 -> MySymbol, MyShape, MyImage로?")
-
 ///
 enum MySymbol: String {
     ///

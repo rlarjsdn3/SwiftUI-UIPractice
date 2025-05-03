@@ -1,5 +1,5 @@
 //
-//  PrimaryButton.swift
+//  MainActionButton.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/3/25.
@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct PrimaryButton: View {
-    var label: String
-    var tintColor: Color
-    var action: () -> Void
+struct MainActionButton: View {
+    
+    let label: String
+    let tint: Color
+    let action: () -> Void
 
     init(
         _ label: String,
-        tintColor: Color = Color.travelPurple,
+        tint: Color = Color.travelPurple,
         action: @escaping () -> Void
     ) {
         self.label = label
-        self.tintColor = tintColor
+        self.tint = tint
         self.action = action
     }
 
@@ -40,5 +41,5 @@ struct PrimaryButton: View {
 }
 
 #Preview {
-    PrimaryButton("Checkout") { }
+    MainActionButton("Checkout") { }
 }

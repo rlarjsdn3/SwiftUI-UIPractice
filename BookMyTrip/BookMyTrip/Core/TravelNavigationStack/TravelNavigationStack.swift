@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-// MARK: - NavigationStack
-
+// MARK: - TripNavigationStack
 
 #warning("코드 리팩토링 + 툴바 완벽하게 상단에 고정시키기")
 #warning("viewHeight PreferenceKey 삭제해보기")
+#warning("TripNavigationStack으로 이름 변경")
 
 ///
 struct TravelNavigationStack<Content>: View where Content: View {
@@ -60,7 +60,9 @@ struct TravelNavigationStack<Content>: View where Content: View {
                         }
                     }
                     .onPreferenceChange(BarDynamicHeightPreferenceKey.self) { dynaimcHeight in
-                        self.dynamicHeight = dynaimcHeight
+                        Task { @MainActor in
+                            self.dynamicHeight = dynaimcHeight
+                        }
                     }
 
                     content()
@@ -77,16 +79,25 @@ struct TravelNavigationStack<Content>: View where Content: View {
                 .navigationBarBackButtonHidden()
             }
             .onPreferenceChange(NavigationBarTitlePreferenceKey.self) { title in
-                self.navigationBarTitle = title
+                Task { @MainActor in
+                    self.navigationBarTitle = title
+                }
             }
             .onPreferenceChange(NavigationBarHeightPreferenceKey.self) { height in
-                self.navigationBarHeight = height
+                Task { @MainActor in
+                    self.navigationBarHeight = height
+                }
             }
             .onPreferenceChange(NavigationBarTitleDisplayModePreferenceKey.self) { mode in
-                self.navigationTitleDisplayMode = mode
+                Task { @MainActor in
+                    self.navigationTitleDisplayMode = mode
+                }
             }
             .onPreferenceChange(ToolbarLayoutPreferenceKey.self) { layout in
-                self.toolBarLayout = layout
+                // 🔴 warning: Bound preference ToolbarLayoutPreferenceKey tried to update multiple times per frame.
+                Task { @MainActor in
+                    self.toolBarLayout = layout
+                }
             }
         }
     }
@@ -173,15 +184,14 @@ extension View {
         @ViewBuilder leadingToolbar: () -> Leading = { EmptyView() },
         @ViewBuilder trailingToolBar: () -> Trailing = { EmptyView() }
     ) -> some View where Leading: View, Trailing: View {
-        return self.preference(
-            key: ToolbarLayoutPreferenceKey.self,
-            value: ToolbarLayout(
-                leadingToolbar: leadingToolbar().eraseToAnyView(),
-                leadingSpacing: leadingSpacing,
-                trarilingToolbar: trailingToolBar().eraseToAnyView(),
-                trailingSpacing: trailingSpacing
-            )
+        let layout = ToolbarLayout(
+            leadingToolbar: leadingToolbar().eraseToAnyView(),
+            leadingSpacing: leadingSpacing,
+            trarilingToolbar: trailingToolBar().eraseToAnyView(),
+            trailingSpacing: trailingSpacing
         )
+        
+        return self.preference(key: ToolbarLayoutPreferenceKey.self, value: layout)
     }
 }
 
