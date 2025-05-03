@@ -16,7 +16,7 @@ struct FindDealsView: View {
     }
     
     var body: some View {
-        TravelNavigationStack {
+        TripNavigationStack {
             VStack(spacing: 0) {
                 navigationHeaderView
                     .padding()
@@ -39,8 +39,7 @@ struct FindDealsView: View {
                     .padding(.bottom, 2)
             }
             .travelToolBarLayout(leadingToolbar: {
-                TravelToolBarItem(Hamburger().eraseToAnyShape()) { }
-                    .frame(width: 25, height: 20)
+                TripToolBarItem(.shape(.hamburger)) { }
             })
         }
     }

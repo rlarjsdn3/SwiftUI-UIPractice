@@ -12,7 +12,7 @@ struct SelectTicketView: View {
     @Environment(\.dismiss) var dismiss: DismissAction
 
     var body: some View {
-        TravelNavigationStack {
+        TripNavigationStack {
             VStack {
                 tripHeadlineView
                     .padding()
@@ -27,13 +27,11 @@ struct SelectTicketView: View {
             }
             .travelNavigationBarTitle("Select Ticket")
             .travelToolBarLayout {
-                TravelToolBarItem(.chevronLeft) { // TODO: ToolbarItem 코드 리팩토링
+                TripToolBarItem(.symbol(.chevronLeft)) {
                     dismiss()
                 }
             } trailingToolBar: {
-                TravelToolBarItem(Hamburger().eraseToAnyShape()) {
-                } // TODO: ToolbarItem 코드 리팩토링
-                .frame(width: 25, height: 20)
+                TripToolBarItem(.shape(.hamburger)) { }
             }
         }
     }

@@ -8,14 +8,6 @@
 import UIKit
 import SwiftUI
 
-struct TicketHeightPreferenceKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
-}
-
 struct TicketView<Header, Footer>: View where Header: View, Footer: View {
     
     @State private var dynamicHeight: CGFloat = 0

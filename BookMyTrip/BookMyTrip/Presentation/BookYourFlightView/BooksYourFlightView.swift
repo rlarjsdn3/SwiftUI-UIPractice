@@ -22,7 +22,7 @@ struct BooksYourFlightView: View {
     @State private var selectedTripType: TripWay = .oneWay
 
     var body: some View {
-        TravelNavigationStack {
+        TripNavigationStack {
             VStack(spacing: 0) {
                 tripTypeButtonGroup
                     .padding(.horizontal)
@@ -52,15 +52,11 @@ struct BooksYourFlightView: View {
             .travelNavigationBarTitle("Book Your Flight")
             .travelNavigationBarTitleDisplayMode(.large)
             .travelToolBarLayout {
-                #warning("ToolbarItem 코드 리팩토링")
-                TravelToolBarItem(.chevronLeft) { // TODO: ToolbarItem 코드 리팩토링
+                TripToolBarItem(.symbol(.chevronLeft)) {
                     dismiss()
                 }
             } trailingToolBar: {
-#warning("ToolbarItem 코드 리팩토링")
-                TravelToolBarItem(Hamburger().eraseToAnyShape()) {
-                } // TODO: ToolbarItem 코드 리팩토링
-                .frame(width: 25, height: 20)
+                TripToolBarItem(.shape(.hamburger)) { }
             }
         }
     }

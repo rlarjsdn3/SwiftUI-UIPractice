@@ -8,10 +8,16 @@
 import SwiftUI
 
 protocol StrokeConfigurable {
+    ///
     var lineWidth: CGFloat { get }
+    ///
     var lineCap: CGLineCap { get }
+    ///
     var lineJoin: CGLineJoin { get }
+    ///
     var miterLimit: CGFloat { get }
+    ///
     var dash: [CGFloat] { get }
+    ///
     var dashPhase: CGFloat { get }
 }

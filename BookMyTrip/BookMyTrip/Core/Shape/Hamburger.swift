@@ -31,7 +31,10 @@ struct Hamburger: Shape {
         CGSize(width: 25, height: 20)
     }
 }
-
+// This extension applies only when `Self` is `Hamburger` and conforms to the `Shape` protocol.
+extension Shape where Self == Hamburger {
+    static var hamburger: Self { self.init() }
+}
 
 #Preview(traits: .sizeThatFitsLayout) {
     Hamburger()

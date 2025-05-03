@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-// How to make `ToolbarLayout` be Sendable?
-struct ToolbarLayout: Equatable, @unchecked Sendable {
-    let leadingToolbar: AnyViewWrapper?
+struct ToolbarLayout: Equatable {
+    let leadingToolbar: IdentifableAnyView?
     let leadingSpacing: CGFloat?
-    let trarilingToolbar: AnyViewWrapper?
+    let trarilingToolbar: IdentifableAnyView?
     let trailingSpacing: CGFloat?
 
     init(
-        leadingToolbar: AnyViewWrapper? = nil,
+        leadingToolbar: IdentifableAnyView? = nil,
         leadingSpacing: CGFloat? = nil,
-        trarilingToolbar: AnyViewWrapper? = nil,
+        trarilingToolbar: IdentifableAnyView? = nil,
         trailingSpacing: CGFloat? = nil
     ) {
         self.leadingToolbar = leadingToolbar

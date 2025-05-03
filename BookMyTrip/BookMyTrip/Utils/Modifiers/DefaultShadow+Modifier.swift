@@ -1,5 +1,5 @@
 //
-//  CommonShadow+Modifier.swift
+//  DefaultShadow+Modifier.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/1/25.

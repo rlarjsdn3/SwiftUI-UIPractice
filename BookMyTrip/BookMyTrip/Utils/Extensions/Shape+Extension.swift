@@ -7,9 +7,29 @@
 
 import SwiftUI
 
-extension RoundedRectangle {
-
-    static var cornerRadius20: some Shape {
-        RoundedRectangle(cornerRadius: 20)
+extension Shape where Self == RoundedRectangle {
+    
+    static var cornerRadius20: Self {
+        cornerRadius(20)
+    }
+    
+    static var cornerRadius22_5: Self {
+        cornerRadius(22.5)
+    }
+    
+    static var cornerRadius25: Self {
+        cornerRadius(25)
+    }
+    
+    static var cornerRadius27_5: Self {
+        cornerRadius(27.5)
+    }
+    
+    static var cornerRadius30: Self {
+        cornerRadius(30)
+    }
+    
+    static func cornerRadius(_ cgfloat: CGFloat) -> Self {
+        .init(cornerRadius: cgfloat)
     }
 }

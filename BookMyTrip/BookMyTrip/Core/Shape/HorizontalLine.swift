@@ -9,17 +9,11 @@ import SwiftUI
 
 struct HorizontalLine: Shape, StrokeConfigurable {
 
-    ///
     let lineWidth: CGFloat
-    ///
     let lineCap: CGLineCap
-    ///
     let lineJoin: CGLineJoin
-    ///
     let miterLimit: CGFloat
-    ///
     let dash: [CGFloat]
-    ///
     let dashPhase: CGFloat
 
     public init(
@@ -60,17 +54,9 @@ struct HorizontalLine: Shape, StrokeConfigurable {
 }
 
 #Preview("HorizontalLine #1", traits: .sizeThatFitsLayout) {
-    HorizontalLine(
-        lineWidth: 2,
-        lineCap: .square,
-        dash: [5, 10]
-    )
+    HorizontalLine(lineWidth: 2, lineCap: .square, dash: [5, 10])
 }
 
 #Preview("HorizontalLine #2", traits: .sizeThatFitsLayout) {
-    HorizontalLine(
-        lineWidth: 2,
-        lineCap: .round,
-        dash: [0.5, 8]
-    )
+    HorizontalLine(lineWidth: 2, lineCap: .round, dash: [0.5, 8])
 }

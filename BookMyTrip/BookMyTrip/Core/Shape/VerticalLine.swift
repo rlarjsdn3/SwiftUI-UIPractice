@@ -9,17 +9,11 @@ import SwiftUI
 
 struct VerticalLine: Shape, StrokeConfigurable {
 
-    ///
     let lineWidth: CGFloat
-    ///
     let lineCap: CGLineCap
-    ///
     let lineJoin: CGLineJoin
-    ///
     let miterLimit: CGFloat
-    ///
     let dash: [CGFloat]
-    ///
     let dashPhase: CGFloat
 
     public init(
