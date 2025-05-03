@@ -23,12 +23,16 @@ struct RecommendedFlight: Identifiable {
     let color: Color
 }
 
-struct Ticket {
+struct Ticket: Identifiable {
+    let id = UUID()
     let price: Int
     let routePlan: [RoutePlan]
 }
 
-struct RoutePlan {
+#warning("duration을 Date나 Duration으로 바꿔보기")
+
+struct RoutePlan: Identifiable {
+    let id = UUID()
     let departure: String
     let departureTime: String
     let arrival: String

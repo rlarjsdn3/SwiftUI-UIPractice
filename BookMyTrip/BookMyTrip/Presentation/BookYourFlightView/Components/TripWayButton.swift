@@ -35,6 +35,14 @@ struct TripWayButton: View {
     @Binding var selectedTripType: TripWay
     let action: () -> Void
 
+    init(_ tripType: TripWay) {
+        self.init(
+            tripType,
+            selectedTripType: .constant(tripType),
+            action: { }
+        )
+    }
+
     init(
         _ tripType: TripWay,
         selectedTripType: Binding<TripWay>,

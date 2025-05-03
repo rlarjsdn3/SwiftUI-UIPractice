@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+#warning("dateFormatter를 Date Extension으로 빼보기")
+
 let dateFormtter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateFormat = "d MMMM yyyy"
@@ -125,18 +127,7 @@ struct BooksYourFlightView: View {
                                     .frame(width: 22, height: 22)
                             })
 
-                        Button {
-                        } label: {
-                            Text("Search The Flight")
-                                .font(.headline)
-                                .foregroundStyle(.white)
-                                .padding(18)
-                                .frame(maxWidth: .infinity)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 14)
-                                        .fill(Color.travelPurple)
-                                }
-                        }
+                        PrimaryButton("Search The Flight") { }
 
                         TripOptionView(
                             edgeInsets: EdgeInsets(vertical: 17, horizontal: 17),
@@ -228,6 +219,9 @@ struct BooksYourFlightView: View {
         }
     }
 }
+
+#warning("Passengers, Class 등 메뉴 선택 구현")
+#warning("추천 여행 클릭하면 SelectTicketView로 이동")
 
 #Preview {
     BooksYourFlightView()

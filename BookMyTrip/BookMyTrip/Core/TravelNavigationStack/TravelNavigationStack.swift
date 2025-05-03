@@ -18,7 +18,7 @@ struct TravelNavigationStack<Content>: View where Content: View {
     
     // MARK: Properties
 
-    @State private var viewHeight: CGFloat = 0
+    @State private var dynamicHeight: CGFloat = 0
 
     @State private var navigationBarHeight: CGFloat = 30
     @State private var navigationBarTitle: String = ""
@@ -51,20 +51,23 @@ struct TravelNavigationStack<Content>: View where Content: View {
                                 .background {
                                     GeometryReader { geo in
                                         Color.clear
-                                            .preference(key: ViewHeightPreferenceKey.self, value: geo.size.height)
+                                            .preference(
+                                                key: BarDynamicHeightPreferenceKey.self,
+                                                value: geo.size.height
+                                            )
                                     }
                                 }
                         }
                     }
-                    .onPreferenceChange(ViewHeightPreferenceKey.self) { height in
-                        self.viewHeight = height
+                    .onPreferenceChange(BarDynamicHeightPreferenceKey.self) { dynaimcHeight in
+                        self.dynamicHeight = dynaimcHeight
                     }
 
                     content()
                         .padding(
                             .top,
                             navigationTitleDisplayMode == .large
-                            ? navigationBarHeight + viewHeight - 14
+                            ? navigationBarHeight + dynamicHeight - 14
                             : navigationBarHeight
                         )
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

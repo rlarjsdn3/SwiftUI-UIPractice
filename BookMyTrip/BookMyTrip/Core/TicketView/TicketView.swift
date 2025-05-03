@@ -8,12 +8,18 @@
 import UIKit
 import SwiftUI
 
-// MARK: - TicketView
+struct TicketHeightPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
 
 struct TicketView<Header, Footer>: View where Header: View, Footer: View {
     
-    // MARK: Properties
-    
+    @State private var dynamicHeight: CGFloat = 0
+
     var ellipsisSize: CGFloat
     var ellipsisOffset: CGFloat
     var cornerRadius: CGFloat
@@ -29,15 +35,12 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
     var horizontalLinePadding: CGFloat {
         linePadding + (ellipsisSize / 2)
     }
-    
-    
-    // MARAK: Intializer
-    
+
     init(
-        ellipsisSize: CGFloat = 25,
-        ellipsisOffset: CGFloat = 100,
-        cornerRadius: CGFloat = 30,
-        linePadding: CGFloat = 15,
+        ellipsisSize: CGFloat = 20,
+        ellipsisOffset: CGFloat = 70,
+        cornerRadius: CGFloat = 25,
+        linePadding: CGFloat = 12.5,
         @ViewBuilder headerView: @escaping () -> Header,
         @ViewBuilder footerView: @escaping () -> Footer
     ) {
@@ -53,21 +56,17 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
     // MARK: Body
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             ticketShape
-            
+
             VStack(spacing: 0) {
                 ticketHeaderView
-                
                 horizontalDashLine
-                
                 ticketFooterView
             }
         }
+        .fixedSize(horizontal: false, vertical: true)
     }
-    
-    
-    // MARK: Subviews
     
     var ticketShape: some View {
         TicketShape(
@@ -90,7 +89,6 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
     var ticketHeaderView: some View {
         headerView()
             .frame(height: headerViewHeight)
-            .frame(maxWidth: .infinity)
     }
     
     var horizontalDashLine: some View {
@@ -110,10 +108,6 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
     
     var ticketFooterView: some View {
         footerView()
-            .frame(
-                maxWidth: .infinity,
-                maxHeight: .infinity
-            )
     }
 }
 
@@ -126,11 +120,10 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
 #Preview {
     TicketView {
         Text("Hello, TicketView!")
-            .foregroundStyle(.black)
+            .padding(.top, 5)
     } footerView: {
         Text("Hello, TicketView!")
-            .foregroundStyle(.black)
+            .padding(.vertical)
     }
-    .frame(height: 350)
     .padding()
 }
