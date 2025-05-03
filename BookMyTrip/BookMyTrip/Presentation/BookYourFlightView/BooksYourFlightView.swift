@@ -7,11 +7,24 @@
 
 import SwiftUI
 
+enum FlightClassType: String, CaseIterable {
+    case economy = "Economy"
+    case business = "Business"
+    case firstClass = "First"
+}
+
 struct BooksYourFlightView: View {
 
     @Environment(\.dismiss) var dismiss: DismissAction
 
-    @State private var selectedTripType: TripWay = .oneWay
+    @State private var selectedTripType: TripType = .oneWay
+
+    @State private var showPassengerSheet: Bool = false
+    @State private var showDeparturesSheet: Bool = false
+    @State private var showFlightClassSheet: Bool = false
+    @State private var selectedPassengers: Int = 1
+    @State private var selectedDepartures: Date = .now
+    @State private var selectedClass: FlightClassType = .economy
 
     var body: some View {
         TripNavigationStack {
@@ -55,8 +68,8 @@ struct BooksYourFlightView: View {
     
     private var tripTypeButtonGroup: some View {
         HStack(spacing: 20) {
-            ForEach(TripWay.allCases) { type in
-                TripWayButton(type, selectedTripType: $selectedTripType) { }
+            ForEach(TripType.allCases) { type in
+                TripTypeButton(type, selectedTripType: $selectedTripType) { }
             }
             Spacer()
         }
@@ -129,7 +142,6 @@ struct BooksYourFlightView: View {
                 edgeInsets: EdgeInsets(vertical: 12, horizontal: 12)) {
 #warning("메뉴로 수정")
                     Text("8 August 2020")
-                        .font(.caption)
                         .frame(height: 18)
                 } leadingIcon: {
                     Image(symbol: .personFill)
@@ -166,7 +178,9 @@ struct BooksYourFlightView: View {
                         .frame(width: 22, height: 22)
                 })
 
-            MainActionButton("Search The Flight") { }
+            MainActionButton("Search The Flight") {
+                showPassengerSheet = true
+            }
             
             TripOptionView(
                 edgeInsets: EdgeInsets(vertical: 17, horizontal: 17),

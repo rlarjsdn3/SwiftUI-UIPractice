@@ -31,6 +31,7 @@ struct TripToolBarItem: View {
                     AnyShape(shape)
                 case .symbol(let symbol):
                     Image(symbol: symbol)
+                        .fontWeight(.semibold)
                 }
             }
             .font(.title3)

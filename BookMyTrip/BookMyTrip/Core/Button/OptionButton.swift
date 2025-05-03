@@ -1,5 +1,5 @@
 //
-//  TripTypeButton.swift
+//  OptionButton.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/2/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TripTypeButton: View {
+struct OptionButton: View {
 
     let label: String
     let icon: MySymbol
@@ -40,7 +40,7 @@ struct TripTypeButton: View {
 
 
 #Preview("One Way", traits: .sizeThatFitsLayout) {
-    TripTypeButton(
+    OptionButton(
         label: "One Way",
         icon: .arrowRight,
         tint: .tripPurple,
@@ -50,7 +50,7 @@ struct TripTypeButton: View {
 }
 
 #Preview("Round Trip", traits: .sizeThatFitsLayout) {
-    TripTypeButton(
+    OptionButton(
         label: "Round Trip",
         icon: .arrowLeftRight,
         tint: .tripPurple,

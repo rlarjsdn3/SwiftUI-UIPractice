@@ -40,7 +40,7 @@ struct CapsuleSearchBar: View {
     private var placeholderText: Text {
         Text("Search Flight, Hotels, etc...")
             .font(.subheadline)
-            .foregroundStyle(Color.tripGray)
+            .foregroundStyle(.tripGray)
     }
 }
 

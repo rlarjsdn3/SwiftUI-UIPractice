@@ -1,5 +1,5 @@
 //
-//  TripWayButton.swift
+//  TripTypeButton.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/2/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum TripWay: CaseIterable {
+enum TripType: CaseIterable {
     case oneWay
     case roundTrip
 
@@ -25,17 +25,17 @@ enum TripWay: CaseIterable {
         }
     }
 }
-extension TripWay: Identifiable {
+extension TripType: Identifiable {
     var id: Self { self }
 }
 
-struct TripWayButton: View {
+struct TripTypeButton: View {
 
-    let tripType: TripWay
-    @Binding var selectedTripType: TripWay
+    let tripType: TripType
+    @Binding var selectedTripType: TripType
     let action: () -> Void
 
-    init(_ tripType: TripWay) {
+    init(_ tripType: TripType) {
         self.init(
             tripType,
             selectedTripType: .constant(tripType),
@@ -44,8 +44,8 @@ struct TripWayButton: View {
     }
 
     init(
-        _ tripType: TripWay,
-        selectedTripType: Binding<TripWay>,
+        _ tripType: TripType,
+        selectedTripType: Binding<TripType>,
         action: @escaping () -> Void
     ) {
         self.tripType = tripType
@@ -54,7 +54,7 @@ struct TripWayButton: View {
     }
 
     var body: some View {
-        TripTypeButton(
+        OptionButton(
             label: tripType.title,
             icon: tripType.symbol,
             tint: .tripPurple,
@@ -68,5 +68,5 @@ struct TripWayButton: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    TripWayButton(.oneWay, selectedTripType: .constant(.oneWay)) { }
+    TripTypeButton(.oneWay, selectedTripType: .constant(.oneWay)) { }
 }

@@ -31,7 +31,7 @@ struct AirwaysTicketView: View {
                 .rotationEffect(.degrees(-45))
                 .foregroundStyle(.white)
                 .padding(12)
-                .background(Color.tripGray, in: Circle())
+                .background(.tripGray, in: Circle())
 
             Text("Airways")
                 .font(.title2)
@@ -79,7 +79,7 @@ struct AirwaysTicketView: View {
                 flightInfoView(route.departureTime, route.departure)
 
                 TravelDurationView(duration: "5h 30m")
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 36)
                     .offset(y: 6)
                 
                 flightInfoView(route.arrivalTime, route.arrival)

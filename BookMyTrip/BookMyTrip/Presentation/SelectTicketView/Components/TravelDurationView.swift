@@ -17,7 +17,7 @@ struct TravelDurationView: View {
                 .font(.caption)
 
             flightDurationLabel
-                .offset(y: -8)
+                .offset(y: -8.5)
 
             Image(asset: .mapPin)
                 .renderingMode(.template)
@@ -31,8 +31,8 @@ struct TravelDurationView: View {
     private var flightDurationLabel: some View {
         VStack(spacing: 3) {
             Text(duration)
-                .font(.caption2)
-                .fontWeight(.medium)
+                .font(.caption)
+                .fontWeight(.semibold)
                 .foregroundStyle(.tripGray)
 
             HStack(spacing: 4) {
@@ -45,7 +45,7 @@ struct TravelDurationView: View {
     }
 
     private var horizontalLine: some View {
-        HorizontalLine(dash: [1, 3])
+        HorizontalLine(lineWidth: 2, lineCap: .round, dash: [0.5, 5])
     }
 }
 

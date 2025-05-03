@@ -46,7 +46,7 @@ struct SelectTicketView: View {
                 Text("SFO - NYC")
                     .font(.title2)
                     .fontWeight(.bold)
-                TripWayButton(.oneWay)
+                TripTypeButton(.oneWay)
                     .disabled(true)
                     .scaleEffect(0.8)
             }
