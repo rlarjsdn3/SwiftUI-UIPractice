@@ -30,11 +30,15 @@ enum MySymbol: String {
     ///
     case chevronLeft                = "chevron.left"
     ///
+    case chevronDown                = "chevron.down"
+    ///
     case magnifyingGlass            = "magnifyingglass"
     ///
     case bookmarkFill               = "bookmark.fill"
     ///
     case chairLoungeFill            = "chair.lounge.fill"
+    ///
+    case xmarkCircle                = "xmark.circle.fill"
 }
 
 extension Image {

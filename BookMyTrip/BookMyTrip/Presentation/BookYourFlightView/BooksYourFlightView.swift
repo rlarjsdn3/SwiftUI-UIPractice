@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum FlightClassType: String, CaseIterable {
-    case economy = "Economy"
-    case business = "Business"
-    case firstClass = "First"
-}
-
 struct BooksYourFlightView: View {
 
     @Environment(\.dismiss) var dismiss: DismissAction
@@ -64,8 +58,69 @@ struct BooksYourFlightView: View {
                 TripToolBarItem(.shape(.hamburger)) { }
             }
         }
+        .bottomSheet(
+            isPresented: $showPassengerSheet,
+            image: .personFill,
+            label: "Passengers"
+        ) {
+            VStack {
+                Picker("Picker", selection: $selectedPassengers) {
+                    ForEach(1..<10) { i in
+                        Text("\(i)")
+                            .tag(i)
+                    }
+                }
+                .pickerStyle(.wheel)
+                
+                MainActionButton("Ok") {
+                    showPassengerSheet = false
+                }
+            }
+            .padding()
+        }
+        .bottomSheet(
+            isPresented: $showDeparturesSheet,
+            image: .calendar,
+            label: "Select Departures"
+        ) {
+            VStack {
+                DatePicker(
+                    "DatePicker",
+                    selection: $selectedDepartures,
+                    displayedComponents: .date
+                )
+                .datePickerStyle(.compact)
+                .labelsHidden()
+                .padding()
+                .padding(.bottom, 15)
+                
+                MainActionButton("Ok") {
+                    showDeparturesSheet = false
+                }
+            }
+            .padding()
+        }
+        .bottomSheet(
+            isPresented: $showFlightClassSheet,
+            image: .chairLoungeFill,
+            label: "Flight Class"
+        ) {
+            VStack {
+                Picker("Picker", selection: $selectedClass) {
+                    ForEach(FlightClassType.allCases) { flightClass in
+                        Text(flightClass.rawValue)
+                    }
+                }
+                .pickerStyle(.wheel)
+                
+                MainActionButton("Ok") {
+                    showFlightClassSheet = false
+                }
+            }
+            .padding()
+        }
     }
-    
+
     private var tripTypeButtonGroup: some View {
         HStack(spacing: 20) {
             ForEach(TripType.allCases) { type in
@@ -117,13 +172,15 @@ struct BooksYourFlightView: View {
         HStack(spacing: 20) {
             TripOptionView(
                 "Passengers",
-                spacing: 14,
+                spacing: 16,
                 cornerRaduis: 12,
                 edgeInsets: EdgeInsets(vertical: 12, horizontal: 12)) {
-                    #warning("메뉴로 수정")
-                    Text("2 Adults")
+                    Button("\(selectedPassengers) Adults") {
+                        showPassengerSheet = true
+                    }
+                    .buttonStyle(.plain)
                 } leadingIcon: {
-                    Image(symbol: .calendar)
+                    Image(symbol: .personFill)
                         .font(.title3)
                         .foregroundStyle(.tripGray)
                 }
@@ -137,14 +194,19 @@ struct BooksYourFlightView: View {
         HStack(spacing: 20) {
             TripOptionView(
                 "Departures",
-                spacing: 16,
+                spacing: 14,
                 cornerRaduis: 12,
                 edgeInsets: EdgeInsets(vertical: 12, horizontal: 12)) {
-#warning("메뉴로 수정")
-                    Text("8 August 2020")
-                        .frame(height: 18)
+                    Button {
+                        showDeparturesSheet = true
+                    } label: {
+                        Text(selectedDepartures.format(.dMMMMyyyy))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.75)
+                    }
+                    .buttonStyle(.plain)
                 } leadingIcon: {
-                    Image(symbol: .personFill)
+                    Image(symbol: .calendar)
                         .font(.title3)
                         .foregroundStyle(.tripGray)
                 }
@@ -154,8 +216,17 @@ struct BooksYourFlightView: View {
                 spacing: 14,
                 cornerRaduis: 12,
                 edgeInsets: EdgeInsets(vertical: 12, horizontal: 12)) {
-#warning("메뉴로 수정")
-                    Text("Business")
+                    HStack {
+                        Button(selectedClass.rawValue) {
+                            showFlightClassSheet = true
+                        }
+                        .buttonStyle(.plain)
+
+                        Image(symbol: .chevronDown)
+                            .font(.caption2)
+                            .foregroundStyle(.tripGray)
+                            .offset(y: 1)
+                    }
                 } leadingIcon: {
                     Image(symbol: .chairLoungeFill)
                         .font(.title3)

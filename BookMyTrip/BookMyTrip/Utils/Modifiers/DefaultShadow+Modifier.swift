@@ -22,7 +22,7 @@ extension View {
     
     func shadow(
         _ color: Color = .tripGray,
-        opacity: Double = 0.44
+        opacity: Double = 0.33
     ) -> some View {
         modifier(DefaultShadow(color: color, opacity: opacity))
     }

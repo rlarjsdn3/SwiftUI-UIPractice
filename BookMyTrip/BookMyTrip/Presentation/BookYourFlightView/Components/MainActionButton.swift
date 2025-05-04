@@ -37,6 +37,7 @@ struct MainActionButton: View {
                         .fill(.tripPurple)
                 }
         }
+        .shadow(tint)
     }
 }
 

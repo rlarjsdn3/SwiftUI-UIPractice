@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HorizontalLine: Shape, StrokeConfigurable {
+struct HorizontalLine: Shape {
 
     let lineWidth: CGFloat
     let lineCap: CGLineCap
