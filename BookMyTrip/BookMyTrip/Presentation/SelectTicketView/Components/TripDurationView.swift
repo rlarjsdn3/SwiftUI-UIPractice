@@ -1,5 +1,5 @@
 //
-//  TravelDurationView.swift
+//  TripDurationView.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/2/25.
@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct TravelDurationView: View {
+struct TripDurationView: View {
     
-    let duration: String
+    private let duration: String
+
+    init(duration: String) {
+        self.duration = duration
+    }
 
     var body: some View {
         HStack(spacing: 2.5) {
@@ -27,6 +31,9 @@ struct TravelDurationView: View {
         }
         .foregroundStyle(.tripGray)
     }
+}
+
+extension TripDurationView {
 
     private var flightDurationLabel: some View {
         VStack(spacing: 3) {
@@ -50,5 +57,5 @@ struct TravelDurationView: View {
 }
 
 #Preview {
-    TravelDurationView(duration: "5h 30m")
+    TripDurationView(duration: "5h 30m")
 }

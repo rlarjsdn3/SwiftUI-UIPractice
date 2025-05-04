@@ -129,5 +129,4 @@ extension ShapeStyle where Self == Color {
             dark:  Color(r: 48, g: 48, b: 50)
         )
     }
-
 }

@@ -9,8 +9,12 @@ import SwiftUI
 
 struct PopularPlaceCard: View {
     
-    let place: PopularPlace
-    
+    private let place: PopularPlace
+
+    init(place: PopularPlace) {
+        self.place = place
+    }
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 27.5)
@@ -28,18 +32,20 @@ struct PopularPlaceCard: View {
                 .stroke(.tripStroke, lineWidth: 1)
         }
     }
-    
-    
+}
+
+extension PopularPlaceCard {
+
     private var placeContentView: some View {
         VStack {
             placeImageView
                 .padding(.bottom, 12.5)
-            
+
             placeInfoView
                 .padding(.bottom, 17.5)
         }
     }
-    
+
     private var placeImageView: some View {
         GeometryReader { geo in
             Image(place.resource)
@@ -60,7 +66,7 @@ struct PopularPlaceCard: View {
                 }
         }
     }
-    
+
     private var placeInfoView: some View {
         VStack(alignment: .leading) {
             Text(place.title)
@@ -73,11 +79,8 @@ struct PopularPlaceCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-
 }
 
-
-// MARK: - Previews
 
 #Preview(traits: .fixedLayout(width: 400, height: 375)) {
     PopularPlaceCard(place: appData.popularPlaces[0])

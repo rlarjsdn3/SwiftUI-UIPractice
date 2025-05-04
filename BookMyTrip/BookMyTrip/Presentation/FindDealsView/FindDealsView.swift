@@ -10,8 +10,10 @@ import SwiftUI
 struct FindDealsView: View {
     
     @State private var searchQuery: String = ""
-    
-    var navigationLinkArray: [FindDeals] {
+
+    #warning("검색창 클릭 시 뷰를 움직이지 않게 하기")
+    #warning("리팩토링 시도")
+    private var navigationLinkArray: [FindDeals] {
         FindDeals.allCases
     }
     
@@ -43,10 +45,11 @@ struct FindDealsView: View {
             })
         }
     }
-    
-    
+}
 
-    var navigationHeaderView: some View {
+extension FindDealsView {
+
+    private var navigationHeaderView: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
                 Text("Hi, Robert")
@@ -80,7 +83,7 @@ struct FindDealsView: View {
         }
     }
 
-    var findDiealsButtonGroupView: some View {
+    private var findDiealsButtonGroupView: some View {
         HStack {
             ForEach(
                 Array(navigationLinkArray.enumerated()),
@@ -91,12 +94,12 @@ struct FindDealsView: View {
                 } label: {
                     VStack {
                         FindDealsSymbolView(link: link)
-                        
+
                         Text(link.title)
                             .font(.subheadline)
                             .foregroundStyle(.label)
                     }
-                    
+
                 }
 
                 if index != FindDeals.allCases.count - 1 {
@@ -106,7 +109,7 @@ struct FindDealsView: View {
         }
     }
 
-    var popularPlacesHeaderView: some View {
+    private var popularPlacesHeaderView: some View {
         HStack {
             Text("Popular Places")
                 .font(.headline)
@@ -120,7 +123,7 @@ struct FindDealsView: View {
         }
     }
 
-    var popularPlacesView: some View {
+    private var popularPlacesView: some View {
         ScrollView(.horizontal) {
             HStack(spacing: -5) {
                 ForEach(appData.popularPlaces) { place in
@@ -135,9 +138,6 @@ struct FindDealsView: View {
         .scrollClipDisabled(true)
     }
 }
-
-
-// MARK: - Previews
 
 #Preview {
     FindDealsView()

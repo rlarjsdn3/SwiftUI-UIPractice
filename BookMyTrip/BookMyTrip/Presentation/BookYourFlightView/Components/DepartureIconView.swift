@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DepartureIconView: View {
+    
     var body: some View {
         VStack(spacing: 4) {
             Image(symbol: .airplane)

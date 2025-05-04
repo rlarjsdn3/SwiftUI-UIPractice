@@ -9,7 +9,11 @@ import SwiftUI
 
 struct AirwaysTicketView: View {
     
-    let ticket: Ticket
+    private let ticket: Ticket
+
+    init(ticket: Ticket) {
+        self.ticket = ticket
+    }
 
     var body: some View {
         TicketView {
@@ -23,8 +27,10 @@ struct AirwaysTicketView: View {
                 .padding(.bottom, 20)
         }
     }
-    
-    
+}
+
+extension AirwaysTicketView {
+
     private var headerView: some View {
         HStack {
             Image(symbol: .airplane)
@@ -49,7 +55,7 @@ struct AirwaysTicketView: View {
             .fontWeight(.semibold)
         }
     }
-    
+
     private var footerView: some View {
         VStack(spacing: 14) {
             deparetureArrivalHeader
@@ -62,7 +68,7 @@ struct AirwaysTicketView: View {
             }
         }
     }
-    
+
     private var deparetureArrivalHeader: some View {
         HStack {
             Text("Departure")
@@ -72,22 +78,22 @@ struct AirwaysTicketView: View {
         .font(.footnote)
         .foregroundStyle(.tripGray)
     }
-    
+
     private func deparetureArrivalRow(_ route: RoutePlan) -> some View {
         VStack {
             HStack {
                 flightInfoView(route.departureTime, route.departure)
 
-                TravelDurationView(duration: "5h 30m")
+                TripDurationView(duration: "5h 30m")
                     .padding(.horizontal, 36)
                     .offset(y: 6)
-                
+
                 flightInfoView(route.arrivalTime, route.arrival)
             }
             .padding(.horizontal)
         }
     }
-    
+
     private func flightInfoView(_ time: String, _ location: String) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(time)

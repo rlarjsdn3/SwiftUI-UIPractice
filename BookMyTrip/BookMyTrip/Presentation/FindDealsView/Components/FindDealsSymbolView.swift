@@ -46,7 +46,8 @@ extension FindDeals: Identifiable {
 
 
 struct FindDealsSymbolView: View {
-    var link: FindDeals
+
+    private let link: FindDeals
 
     init(link: FindDeals) {
         self.link = link

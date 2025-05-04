@@ -15,7 +15,12 @@ struct TicketShape: Shape {
     let ellipsisOffset: CGFloat
     //
     let cornerRadius: CGFloat
-
+    
+    /// <#Description#>
+    /// - Parameters:
+    ///   - ellipsisSize: <#ellipsisSize description#>
+    ///   - ellipsisOffset: <#ellipsisOffset description#>
+    ///   - cornerRadius: <#cornerRadius description#>
     init(
         ellipsisSize: CGFloat,
         ellipsisOffset: CGFloat,

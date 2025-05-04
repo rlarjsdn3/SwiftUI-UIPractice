@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ViewAllHeaderView: View {
     
-    let label: String
-    let action: () -> Void
-    
+    private let label: String
+    private let action: () -> Void
+
     init(_ label: String, action: @escaping () -> Void) {
         self.label = label
         self.action = action

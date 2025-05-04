@@ -14,10 +14,7 @@ extension EdgeInsets {
     /// - Parameters:
     ///   - vertical: <#vertical description#>
     ///   - horizontal: <#horizontal description#>
-    init(
-        vertical: CGFloat,
-        horizontal: CGFloat
-    ) {
+    init(vertical: CGFloat, horizontal: CGFloat) {
         self.init(
             top: vertical,
             leading: horizontal,
@@ -28,6 +25,7 @@ extension EdgeInsets {
 }
 
 extension EdgeInsets {
-    
+
+    /// <#Description#>
     static let zero = EdgeInsets(vertical: 0, horizontal: 0)
 }

@@ -44,9 +44,6 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
         self.footerView = footerView
     }
     
-    
-    // MARK: Body
-    
     var body: some View {
         ZStack(alignment: .top) {
             ticketShape
@@ -59,8 +56,11 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
         }
         .fixedSize(horizontal: false, vertical: true)
     }
-    
-    var ticketShape: some View {
+}
+
+extension TicketView {
+
+    private var ticketShape: some View {
         TicketShape(
             ellipsisSize: ellipsisSize,
             ellipsisOffset: ellipsisOffset,
@@ -77,13 +77,13 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
             .stroke(.tripStroke, lineWidth: 1)
         }
     }
-    
-    var ticketHeaderView: some View {
+
+    private var ticketHeaderView: some View {
         headerView()
             .frame(height: headerViewHeight)
     }
-    
-    var horizontalDashLine: some View {
+
+    private var horizontalDashLine: some View {
         HStack(spacing: 0) {
             Spacer(minLength: horizontalLinePadding)
             HorizontalLine(
@@ -97,17 +97,14 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
             Spacer(minLength: horizontalLinePadding)
         }
     }
-    
-    var ticketFooterView: some View {
+
+    private var ticketFooterView: some View {
         footerView()
     }
 }
 
 
 
-
-
-// MARK: - Previews
 
 #Preview(traits: .sizeThatFitsLayout) {
     TicketView {

@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-// MARK: - TripNavigationStack
-
 ///
 struct TripNavigationStack<Content>: View where Content: View {
-    
-    // MARK: Properties
     
     @State private var navigationBarHeight: CGFloat = 30
     @State private var navigationBarTitle: String = ""
@@ -21,15 +17,10 @@ struct TripNavigationStack<Content>: View where Content: View {
     
     var content: () -> Content
     
-    
-    // MARK: Intitalizer
-    
     init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
-    
-    // MARK: Body
-    
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -77,10 +68,10 @@ struct TripNavigationStack<Content>: View where Content: View {
             .navigationBarBackButtonHidden()
         }
     }
-    
-    
-    // MARK: Subviews
-    
+}
+
+extension TripNavigationStack {
+
     var navigationToolbar: some View {
         HStack {
             HStack(spacing: toolBarLayout?.leadingSpacing) {
@@ -101,14 +92,14 @@ struct TripNavigationStack<Content>: View where Content: View {
         .frame(height: navigationBarHeight)
         .frame(maxWidth: .infinity)
     }
-    
+
     var inlineNavigationTitle: some View {
         Text(navigationBarTitle)
             .font(.title2)
             .fontWeight(.bold)
             .frame(maxWidth: .infinity)
     }
-    
+
     var largeNavigationTitle: some View {
         Text(navigationBarTitle)
             .font(.largeTitle)
@@ -116,10 +107,6 @@ struct TripNavigationStack<Content>: View where Content: View {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
-
-
-
-// MARK: - Extensions
 
 extension View {
     
@@ -169,7 +156,6 @@ extension View {
 }
 
 
-// MARK: - Previews
 
 #Preview("NavigationStack (Inline)") {
     TripNavigationStack {

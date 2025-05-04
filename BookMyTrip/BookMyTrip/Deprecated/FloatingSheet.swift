@@ -73,9 +73,3 @@ extension View {
         }
     }
 }
-
-#Preview {
-    FloatingSheet("Hello, World!") {
-        Text("Hello, FloatingSheet!")
-    }
-}

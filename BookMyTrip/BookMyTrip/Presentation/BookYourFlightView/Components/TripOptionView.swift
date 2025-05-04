@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
 
-    let leadingIcon: () -> Icon
-    let label: String?
-    let subLabel: () -> Detail
-    let spacing: CGFloat
-    let cornerRadius: CGFloat
-    let edgeInsets: EdgeInsets
-    
+    private let leadingIcon: () -> Icon
+    private let label: String?
+    private let subLabel: () -> Detail
+    private let spacing: CGFloat
+    private let cornerRadius: CGFloat
+    private let edgeInsets: EdgeInsets
+
     init(
         _ label: String? = nil,
         spacing: CGFloat = 24,
@@ -66,6 +66,8 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
         .shadow()
     }
 }
+
+
 
 #Preview(traits: .sizeThatFitsLayout) {
     TripOptionView("From") {

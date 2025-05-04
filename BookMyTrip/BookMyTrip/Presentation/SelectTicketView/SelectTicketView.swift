@@ -35,8 +35,10 @@ struct SelectTicketView: View {
             }
         }
     }
-    
-    
+}
+
+extension SelectTicketView {
+
     private var tripHeadlineView: some View {
         VStack(alignment: .leading, spacing: -2) {
             Text("Your Trip")
@@ -56,7 +58,7 @@ struct SelectTicketView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-    
+
     private var ticketsScrollView: some View {
         VStack(spacing: 30) {
             ForEach(appData.tickets) { ticket in
@@ -65,9 +67,9 @@ struct SelectTicketView: View {
             }
         }
     }
-    
+
     private var checkoutButton: some View {
-        MainActionButton("Checkout") { }
+        MainButton("Checkout") { }
             .shadow(.tripPurple, opacity: 0.55)
     }
 }

@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+enum FlightClassType: String, CaseIterable, Identifiable {
+    var id: Self { self }
+    case economy = "Economy"
+    case business = "Business"
+    case firstClass = "First"
+}
+
 struct BooksYourFlightView: View {
 
     @Environment(\.dismiss) var dismiss: DismissAction
@@ -31,13 +38,13 @@ struct BooksYourFlightView: View {
                 VStack(spacing: 18) {
                     routSelectionView
                         .padding([.top, .horizontal])
-                    
+
                     passengetSelectionView
                         .padding(.horizontal)
-                    
+
                     departuresSelectionView
                         .padding(.horizontal)
-                    
+
                     searchTheFlightButton
                         .padding(.horizontal)
                         .padding(.bottom, 10)
@@ -63,63 +70,45 @@ struct BooksYourFlightView: View {
             image: .personFill,
             label: "Passengers"
         ) {
-            VStack {
-                Picker("Picker", selection: $selectedPassengers) {
-                    ForEach(1..<10) { i in
-                        Text("\(i)")
-                            .tag(i)
-                    }
-                }
-                .pickerStyle(.wheel)
-                
-                MainActionButton("Ok") {
-                    showPassengerSheet = false
+            Picker("Picker", selection: $selectedPassengers) {
+                ForEach(1..<10) { i in
+                    Text("\(i)")
+                        .tag(i)
                 }
             }
-            .padding()
+            .pickerStyle(.wheel)
         }
         .bottomSheet(
             isPresented: $showDeparturesSheet,
             image: .calendar,
             label: "Select Departures"
         ) {
-            VStack {
-                DatePicker(
-                    "DatePicker",
-                    selection: $selectedDepartures,
-                    displayedComponents: .date
-                )
-                .datePickerStyle(.compact)
-                .labelsHidden()
-                .padding()
-                .padding(.bottom, 15)
-                
-                MainActionButton("Ok") {
-                    showDeparturesSheet = false
-                }
-            }
-            .padding()
+            DatePicker(
+                "DatePicker",
+                selection: $selectedDepartures,
+                displayedComponents: .date
+            )
+            .datePickerStyle(.compact)
+            .labelsHidden()
+            .padding(.vertical, 30)
         }
         .bottomSheet(
             isPresented: $showFlightClassSheet,
             image: .chairLoungeFill,
             label: "Flight Class"
         ) {
-            VStack {
-                Picker("Picker", selection: $selectedClass) {
-                    ForEach(FlightClassType.allCases) { flightClass in
-                        Text(flightClass.rawValue)
-                    }
-                }
-                .pickerStyle(.wheel)
-                
-                MainActionButton("Ok") {
-                    showFlightClassSheet = false
+            Picker("Picker", selection: $selectedClass) {
+                ForEach(FlightClassType.allCases) { flightClass in
+                    Text(flightClass.rawValue)
                 }
             }
+            .pickerStyle(.wheel)
             .padding()
         }
     }
+}
+
+extension BooksYourFlightView {
 
     private var tripTypeButtonGroup: some View {
         HStack(spacing: 20) {
@@ -129,7 +118,7 @@ struct BooksYourFlightView: View {
             Spacer()
         }
     }
-    
+
     private var swaipLocationButton: some View {
         Button {
         } label: {
@@ -145,7 +134,7 @@ struct BooksYourFlightView: View {
         }
         .shadow(Color.tripPurple)
     }
-    
+
     private var routSelectionView: some View {
         VStack(spacing: 18) {
             TripOptionView("From") {
@@ -167,7 +156,7 @@ struct BooksYourFlightView: View {
                 .padding(.trailing, 36)
         }
     }
-    
+
     private var passengetSelectionView: some View {
         HStack(spacing: 20) {
             TripOptionView(
@@ -189,7 +178,7 @@ struct BooksYourFlightView: View {
                 .hidden()
         }
     }
-    
+
     private var departuresSelectionView: some View {
         HStack(spacing: 20) {
             TripOptionView(
@@ -234,7 +223,7 @@ struct BooksYourFlightView: View {
                 }
         }
     }
-    
+
     private var searchTheFlightButton: some View {
         HStack(spacing: 18) {
             TripOptionView(
@@ -249,10 +238,9 @@ struct BooksYourFlightView: View {
                         .frame(width: 22, height: 22)
                 })
 
-            MainActionButton("Search The Flight") {
-                showPassengerSheet = true
+            MainButton("Search The Flight") {
             }
-            
+
             TripOptionView(
                 edgeInsets: EdgeInsets(vertical: 17, horizontal: 17),
                 leadingIcon: {
@@ -267,7 +255,7 @@ struct BooksYourFlightView: View {
             .hidden()
         }
     }
-    
+
     private var flightCardsScrollView: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 30) {

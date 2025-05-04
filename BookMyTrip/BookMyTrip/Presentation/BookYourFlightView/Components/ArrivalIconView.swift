@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ArrivalIconView: View {
+    
     var body: some View {
         VStack(spacing: 3) {
             VerticalLine(lineCap: .round, dash: [1, 2])

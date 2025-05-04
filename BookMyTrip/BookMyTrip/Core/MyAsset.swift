@@ -15,7 +15,9 @@ enum MyAsset: String {
 }
 
 extension Image {
-
+    
+    /// <#Description#>
+    /// - Parameter asset: <#asset description#>
     init(asset: MyAsset) {
         self.init(asset.rawValue)
     }

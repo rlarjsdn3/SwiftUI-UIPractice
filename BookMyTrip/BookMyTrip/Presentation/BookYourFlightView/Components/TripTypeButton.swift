@@ -31,9 +31,9 @@ extension TripType: Identifiable {
 
 struct TripTypeButton: View {
 
-    let tripType: TripType
-    @Binding var selectedTripType: TripType
-    let action: () -> Void
+    private let tripType: TripType
+    @Binding private var selectedTripType: TripType
+    private let action: () -> Void
 
     init(_ tripType: TripType) {
         self.init(

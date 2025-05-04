@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CapsuleSearchBar: View {
-    @Binding var searchQuery: String
+
+    @Binding private var searchQuery: String
 
     init(searchQuery: Binding<String>) {
         self._searchQuery = searchQuery
@@ -29,14 +30,17 @@ struct CapsuleSearchBar: View {
         .padding()
         .background(.tripSecondary, in: .capsule)
     }
-    
+}
+
+extension CapsuleSearchBar {
+
     private var magnifyingGlassImage: some View {
         Image(symbol: .magnifyingGlass)
             .font(.title3)
             .fontWeight(.semibold)
             .foregroundStyle(.tripGray)
     }
-    
+
     private var placeholderText: Text {
         Text("Search Flight, Hotels, etc...")
             .font(.subheadline)

@@ -17,7 +17,7 @@ struct BottomSheet<Content>: View where Content: View {
     
     private let image: MySymbol
     private let label: String
-    private let maxHeight: CGFloat?
+    private let background: Color?
     private let content: () -> Content
 
     @Binding private var isPresented: Bool
@@ -28,13 +28,13 @@ struct BottomSheet<Content>: View where Content: View {
         isPresented: Binding<Bool>,
         image: MySymbol,
         label: String,
-        maxHeight: CGFloat? = nil,
+        background: Color? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) {
         self._isPresented = isPresented
         self.image = image
         self.label = label
-        self.maxHeight = maxHeight
+        self.background = background
         self.content = content
     }
 
@@ -61,12 +61,21 @@ struct BottomSheet<Content>: View where Content: View {
                         content()
                         Spacer(minLength: 0)
                     }
+
+                    MainButton("Ok") {
+                        isPresented = false
+                    }
+                    .padding()
                 }
                 .frame( maxWidth: .infinity)
-                .cornerRadius(.background, cornerRadius: 30)
+                .cornerRadius(background ?? .tripSecondary, cornerRadius: 30)
                 .background {
                     RoundedRectangle(cornerRadius: 30)
                         .shadow()
+                }
+                .overlay {
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(.tripStroke, lineWidth: 1)
                 }
                 .padding(.horizontal)
                 .padding(.bottom, safeAreaInsets.bottom)
@@ -104,7 +113,7 @@ struct BottomSheet<Content>: View where Content: View {
 extension BottomSheet {
     
     private func dragGesture() -> some Gesture {
-        DragGesture(minimumDistance: 30, coordinateSpace: .local)
+        DragGesture(minimumDistance: 10, coordinateSpace: .local)
             .onChanged(onChanged)
             .onEnded(onEnded)
     }
@@ -138,7 +147,6 @@ extension BottomSheet {
             Task.delayed(byTimeInterval: animationDuration) { @MainActor in
                 isDragging = false
             }
-            
         } else {
             withAnimation(.spring(duration: animationDuration)) {
                 dragOffsetY = 0
@@ -149,7 +157,14 @@ extension BottomSheet {
 }
 
 extension View {
-
+    
+    /// <#Description#>
+    /// - Parameters:
+    ///   - isPresented: <#isPresented description#>
+    ///   - image: <#image description#>
+    ///   - label: <#label description#>
+    ///   - content: <#content description#>
+    /// - Returns: <#description#>
     func bottomSheet<Content>(
         isPresented: Binding<Bool>,
         image: MySymbol,
@@ -167,6 +182,8 @@ extension View {
         }
     }
 }
+
+
 
 #Preview {
     BottomSheet(

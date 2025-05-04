@@ -44,6 +44,7 @@ struct ApplicationData {
     let tickets: [Ticket]
 
     init() {
+        #warning("텍스트는 제시한 UI와 동일하게 작성")
         popularPlaces = [
             .init(title: "주상절리", distance: 1.45, resource: "columnar-joints"),
             .init(title: "설악산", distance: 6.54, resource: "seoraksan-mountain"),

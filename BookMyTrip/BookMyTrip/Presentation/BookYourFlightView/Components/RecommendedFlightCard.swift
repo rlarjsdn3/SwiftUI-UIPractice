@@ -9,8 +9,12 @@ import SwiftUI
 
 struct RecommendedFlightCard: View {
     
-    let flight: RecommendedFlight
-    
+    private let flight: RecommendedFlight
+
+    init(flight: RecommendedFlight) {
+        self.flight = flight
+    }
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -27,8 +31,10 @@ struct RecommendedFlightCard: View {
         .background(linearGradient(flight.color), in: RoundedRectangle(cornerRadius: 20))
         .shadow(flight.color, opacity: 0.55)
     }
-    
-    
+}
+
+extension RecommendedFlightCard {
+
     private var airplaneIconView: some View {
         HStack {
             Image(symbol: .airplane)
@@ -37,18 +43,18 @@ struct RecommendedFlightCard: View {
                 .rotationEffect(.degrees(-45))
                 .padding(6)
                 .background(.white, in: RoundedRectangle(cornerRadius: 8))
-            
+
             Spacer()
         }
     }
-    
+
     @ViewBuilder
     private var flightCompactInfo: some View {
         Text(flight.date.format(.dMMMMyyyy))
             .font(.caption2)
             .fontWeight(.light)
             .foregroundStyle(Color.white)
-        
+
         HStack {
             Text(flight.departure)
                 .fontWeight(.semibold)
@@ -59,7 +65,7 @@ struct RecommendedFlightCard: View {
         }
         .foregroundStyle(.white)
         .padding(.bottom, 5)
-        
+
         HStack(spacing: 0) {
             Text("$")
             Text("\(flight.price)")
@@ -67,7 +73,7 @@ struct RecommendedFlightCard: View {
         .fontWeight(.semibold)
         .foregroundStyle(.white)
     }
-    
+
     private func linearGradient(_ color: Color) -> some ShapeStyle {
         LinearGradient(
             stops: [.init(color: color.opacity(0.77), location: 0.0),
