@@ -14,21 +14,25 @@ struct PopularPlaceCard: View {
     init(place: PopularPlace) {
         self.place = place
     }
+    
+    var roundedRectangle: some Shape {
+        RoundedRectangle(cornerRadius: 27.5)
+    }
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 27.5)
+            roundedRectangle
                 .fill(.tripSecondary)
             
             placeContentView
                 .padding(15)
         }
         .background {
-            RoundedRectangle(cornerRadius: 27.5)
+            roundedRectangle
                 .shadow()
         }
         .overlay {
-            RoundedRectangle(cornerRadius: 27.5)
+            roundedRectangle
                 .stroke(.tripStroke, lineWidth: 1)
         }
     }
@@ -52,7 +56,7 @@ extension PopularPlaceCard {
                 .resizable()
                 .scaledToFill()
                 .frame(width: geo.size.width)
-                .clipShape(RoundedRectangle.cornerRadius20)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
                 .overlay(alignment: .topTrailing) {
                     Image(symbol: .bookmarkFill)
                         .font(.caption)

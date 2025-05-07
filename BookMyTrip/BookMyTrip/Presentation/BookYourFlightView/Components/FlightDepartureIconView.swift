@@ -1,5 +1,5 @@
 //
-//  DepartureIconView.swift
+//  FlightDepartureIconView.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/2/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DepartureIconView: View {
+struct FlightDepartureIconView: View {
     
     var body: some View {
         VStack(spacing: 4) {
@@ -21,6 +21,6 @@ struct DepartureIconView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    DepartureIconView()
+    FlightDepartureIconView()
         .frame(height: 50)
 }

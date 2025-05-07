@@ -49,7 +49,7 @@ struct HorizontalLine: Shape {
     }
 
     func sizeThatFits(_ proposal: ProposedViewSize) -> CGSize {
-        CGSize(width: proposal.width ?? 0, height: 1)
+        CGSize(width: proposal.width ?? 0, height: lineWidth)
     }
 }
 
@@ -58,5 +58,5 @@ struct HorizontalLine: Shape {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    HorizontalLine(lineWidth: 2, lineCap: .round, dash: [0.5, 8])
+    HorizontalLine(lineWidth: 20, lineCap: .round, dash: [0.5, 8])
 }

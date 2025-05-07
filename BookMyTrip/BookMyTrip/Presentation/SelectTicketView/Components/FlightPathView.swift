@@ -1,5 +1,5 @@
 //
-//  TripDurationView.swift
+//  FlightPathView.swift
 //  BookMyTrip
 //
 //  Created by 김건우 on 5/2/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TripDurationView: View {
+struct FlightPathView: View {
     
     private let duration: String
 
@@ -20,7 +20,7 @@ struct TripDurationView: View {
             Image(symbol: .airplane)
                 .font(.caption)
 
-            flightDurationLabel
+            flightPathLabel
                 .offset(y: -8.5)
 
             Image(asset: .mapPin)
@@ -33,9 +33,10 @@ struct TripDurationView: View {
     }
 }
 
-extension TripDurationView {
 
-    private var flightDurationLabel: some View {
+extension FlightPathView {
+
+    private var flightPathLabel: some View {
         VStack(spacing: 3) {
             Text(duration)
                 .font(.caption)
@@ -57,5 +58,5 @@ extension TripDurationView {
 }
 
 #Preview {
-    TripDurationView(duration: "5h 30m")
+    FlightPathView(duration: "5h 30m")
 }

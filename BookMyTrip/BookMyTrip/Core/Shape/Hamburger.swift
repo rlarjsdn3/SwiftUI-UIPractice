@@ -9,6 +9,12 @@ import SwiftUI
 
 struct Hamburger: Shape {
 
+    let lineWidth: CGFloat
+    
+    init(lineWidth: CGFloat = 2.5) {
+        self.lineWidth = lineWidth
+    }
+    
     func path(in rect: CGRect) -> Path {
         var path = Path()
         path.move(toX: rect.minX, y: 0)
@@ -21,7 +27,7 @@ struct Hamburger: Shape {
         return path
             .strokedPath(
                 StrokeStyle(
-                    lineWidth: 2.5,
+                    lineWidth: lineWidth,
                     lineCap: .round
                 )
             )

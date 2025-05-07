@@ -17,6 +17,12 @@ extension View {
     func cornerRadius(_ style: some ShapeStyle, cornerRadius cgfloat: CGFloat) -> some View {
         background(style, in: RoundedRectangle(cornerRadius: cgfloat))
     }
+    
+    /*
+    func cornerRadius<S>(_ style: S, cornerRadius cgfloat: CGFloat) -> some View where S: ShapeStyle {
+        // ...
+    }
+    */
 }
 
 

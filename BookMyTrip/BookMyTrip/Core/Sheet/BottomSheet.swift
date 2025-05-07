@@ -37,30 +37,21 @@ struct BottomSheet<Content>: View where Content: View {
         self.background = background
         self.content = content
     }
+    
+    var roundedRectangle: some Shape {
+        RoundedRectangle(cornerRadius: 30)
+    }
 
     var body: some View {
         ZStack(alignment: .bottom) {
             if isPresented {
                 VStack(spacing: 0) {
-                    HStack(spacing: 15) {
-                        Image(symbol: image)
-                        Text(label)
-                    }
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.tripGray)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-                    .padding(.top, 24)
+                    headerView
+                        .padding(.horizontal)
+                        .padding(.top, 24)
                     // 🟠 warning: Image and Text are slightly shift when the drag gesture is ends.
                     
-                    Spacer(minLength: 0)
-                    
-                    VStack {
-                        Spacer(minLength: 0)
-                        content()
-                        Spacer(minLength: 0)
-                    }
+                    contentView
 
                     MainButton("Ok") {
                         isPresented = false
@@ -70,11 +61,11 @@ struct BottomSheet<Content>: View where Content: View {
                 .frame( maxWidth: .infinity)
                 .cornerRadius(background ?? .tripSecondary, cornerRadius: 30)
                 .background {
-                    RoundedRectangle(cornerRadius: 30)
+                    roundedRectangle
                         .shadow()
                 }
                 .overlay {
-                    RoundedRectangle(cornerRadius: 30)
+                    roundedRectangle
                         .stroke(.tripStroke, lineWidth: 1)
                 }
                 .padding(.horizontal)
@@ -107,6 +98,28 @@ struct BottomSheet<Content>: View where Content: View {
         }
         .ignoresSafeArea()
         .animation(.smooth(duration: animationDuration), value: isPresented)
+    }
+}
+
+extension BottomSheet {
+    
+    var headerView: some View {
+        HStack(spacing: 15) {
+            Image(symbol: image)
+            Text(label)
+        }
+        .font(.title2)
+        .fontWeight(.bold)
+        .foregroundStyle(.tripGray)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    var contentView: some View {
+        VStack {
+            Spacer(minLength: 0)
+            content()
+            Spacer(minLength: 0)
+        }
     }
 }
 

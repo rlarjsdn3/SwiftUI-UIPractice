@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+#if disabled
 struct SafeAreaInsetsKey: EnvironmentKey {
     
     static let defaultValue: EdgeInsets = {
@@ -17,18 +18,21 @@ struct SafeAreaInsetsKey: EnvironmentKey {
         return .zero
     }()
 }
+#endif
 
 extension EnvironmentValues {
     
     /// <#Description#>
-    var safeAreaInsets: EdgeInsets {
-        get { self[SafeAreaInsetsKey.self] }
-        set { self[SafeAreaInsetsKey.self] = newValue }
-    }
+    @Entry var safeAreaInsets: EdgeInsets = {
+        if let edgeInsets = Helper.keyWindow()?.safeAreaInsets {
+            return edgeInsets.insets
+        }
+        return .zero
+    }()
 }
 
 
-private extension UIEdgeInsets {
+extension UIEdgeInsets {
 
     var insets: EdgeInsets {
         EdgeInsets(top: top, leading: left, bottom: bottom, trailing: right)

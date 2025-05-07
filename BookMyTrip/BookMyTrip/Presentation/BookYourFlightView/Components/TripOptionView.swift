@@ -73,7 +73,7 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
     TripOptionView("From") {
         Text("San Francisco")
     } leadingIcon: {
-        DepartureIconView()
+        FlightDepartureIconView()
             .frame(height: 40)
     }
     .frame(height: 90)

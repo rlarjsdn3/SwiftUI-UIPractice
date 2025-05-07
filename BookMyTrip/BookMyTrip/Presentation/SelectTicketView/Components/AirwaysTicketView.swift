@@ -84,7 +84,7 @@ extension AirwaysTicketView {
             HStack {
                 flightInfoView(route.departureTime, route.departure)
 
-                TripDurationView(duration: "5h 30m")
+                FlightPathView(duration: "5h 30m")
                     .padding(.horizontal, 36)
                     .offset(y: 6)
 
@@ -106,6 +106,6 @@ extension AirwaysTicketView {
 }
 
 
-#Preview("AirwaysTicket", traits: .sizeThatFitsLayout) {
+#Preview(traits: .sizeThatFitsLayout) {
     AirwaysTicketView(ticket: appData.tickets[0])
 }

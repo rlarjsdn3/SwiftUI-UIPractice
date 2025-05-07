@@ -70,40 +70,21 @@ struct BooksYourFlightView: View {
             image: .personFill,
             label: "Passengers"
         ) {
-            Picker("Picker", selection: $selectedPassengers) {
-                ForEach(1..<10) { i in
-                    Text("\(i)")
-                        .tag(i)
-                }
-            }
-            .pickerStyle(.wheel)
+            passengersSheetView
         }
         .bottomSheet(
             isPresented: $showDeparturesSheet,
             image: .calendar,
             label: "Select Departures"
         ) {
-            DatePicker(
-                "DatePicker",
-                selection: $selectedDepartures,
-                displayedComponents: .date
-            )
-            .datePickerStyle(.compact)
-            .labelsHidden()
-            .padding(.vertical, 30)
+            departuresSheetView
         }
         .bottomSheet(
             isPresented: $showFlightClassSheet,
             image: .chairLoungeFill,
             label: "Flight Class"
         ) {
-            Picker("Picker", selection: $selectedClass) {
-                ForEach(FlightClassType.allCases) { flightClass in
-                    Text(flightClass.rawValue)
-                }
-            }
-            .pickerStyle(.wheel)
-            .padding()
+            flightClassSheetView
         }
     }
 }
@@ -140,14 +121,14 @@ extension BooksYourFlightView {
             TripOptionView("From") {
                 Text("San Fancisco")
             } leadingIcon: {
-                DepartureIconView()
+                FlightDepartureIconView()
             }
             .frame(height: 74)
 
             TripOptionView("Destination") {
                 Text("New York")
             } leadingIcon: {
-                ArrivalIconView()
+                FlightArrivalIconView()
             }
             .frame(height: 74)
         }
@@ -238,8 +219,7 @@ extension BooksYourFlightView {
                         .frame(width: 22, height: 22)
                 })
 
-            MainButton("Search The Flight") {
-            }
+            MainButton("Search The Flight") { }
 
             TripOptionView(
                 edgeInsets: EdgeInsets(vertical: 17, horizontal: 17),
@@ -271,6 +251,39 @@ extension BooksYourFlightView {
         }
         .scrollClipDisabled(true)
         .scrollIndicators(.hidden)
+    }
+}
+
+extension BooksYourFlightView {
+    var passengersSheetView: some View {
+        Picker("Picker", selection: $selectedPassengers) {
+            ForEach(1..<10) { i in
+                Text("\(i)")
+                    .tag(i)
+            }
+        }
+        .pickerStyle(.wheel)
+    }
+    
+    var departuresSheetView: some View {
+        DatePicker(
+            "DatePicker",
+            selection: $selectedDepartures,
+            displayedComponents: .date
+        )
+        .datePickerStyle(.compact)
+        .labelsHidden()
+        .padding(.vertical, 30)
+    }
+    
+    var flightClassSheetView: some View {
+        Picker("Picker", selection: $selectedClass) {
+            ForEach(FlightClassType.allCases) { flightClass in
+                Text(flightClass.rawValue)
+            }
+        }
+        .pickerStyle(.wheel)
+        .padding()
     }
 }
 

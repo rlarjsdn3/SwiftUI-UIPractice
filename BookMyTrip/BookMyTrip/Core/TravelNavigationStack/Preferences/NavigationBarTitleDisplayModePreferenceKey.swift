@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-@MainActor
-struct NavigationBarTitleDisplayModePreferenceKey: @preconcurrency PreferenceKey {
+struct NavigationBarTitleDisplayModePreferenceKey: PreferenceKey {
     static let defaultValue: NavigationBarItem.TitleDisplayMode = .inline
     static func reduce(value: inout NavigationBarItem.TitleDisplayMode, nextValue: () -> NavigationBarItem.TitleDisplayMode) {
         value = nextValue()

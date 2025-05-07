@@ -17,9 +17,9 @@ extension Date {
     /// <#Description#>
     /// - Parameter toString: <#toString description#>
     /// - Returns: <#description#>
-    func format(_ toString: String) -> String {
+    func format(_ toString: String, locale: Locale = "en_us") -> String {
         let formatter = DateFormatter()
-        formatter.locale = "en_us"
+        formatter.locale = locale
         formatter.dateFormat = toString
         return formatter.string(from: self)
     }
@@ -27,8 +27,8 @@ extension Date {
     /// <#Description#>
     /// - Parameter toString: <#toString description#>
     /// - Returns: <#description#>
-    func format(_ toString: Date.Format) -> String {
-        format(toString.rawValue)
+    func format(_ toString: Date.Format, locale: Locale = "en_us") -> String {
+        format(toString.rawValue, locale: locale)
     }
 }
 

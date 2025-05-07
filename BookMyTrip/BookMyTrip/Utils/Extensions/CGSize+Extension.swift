@@ -10,7 +10,7 @@ import SwiftUI
 extension CGSize {
     
     /// <#Description#>
-    /// - Parameter widthHeight: <#widthHeight description#>
+    /// - Parameter uniformSize: <#widthHeight description#>
     init(uniformSize cgfloat: CGFloat) {
         self.init(width: cgfloat, height: cgfloat)
     }

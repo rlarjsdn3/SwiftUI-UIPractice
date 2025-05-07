@@ -49,7 +49,7 @@ struct VerticalLine: Shape {
     }
 
     func sizeThatFits(_ proposal: ProposedViewSize) -> CGSize {
-        CGSize(width: 1, height: proposal.height ?? 0)
+        CGSize(width: lineWidth, height: proposal.height ?? 0)
     }
 }
 
@@ -58,5 +58,5 @@ struct VerticalLine: Shape {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    VerticalLine(lineWidth: 1, lineCap: .round, dash: [0.5, 3])
+    VerticalLine(lineWidth: 10, lineCap: .round, dash: [0.5, 3])
 }

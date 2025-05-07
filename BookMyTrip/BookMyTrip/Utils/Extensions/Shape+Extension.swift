@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(*, deprecated)
 extension Shape where Self == RoundedRectangle {
 
     ///

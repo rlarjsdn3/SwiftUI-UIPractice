@@ -27,5 +27,5 @@ extension EdgeInsets {
 extension EdgeInsets {
 
     /// <#Description#>
-    static let zero = EdgeInsets(vertical: 0, horizontal: 0)
+    static var zero: EdgeInsets { EdgeInsets(vertical: 0, horizontal: 0) }
 }
