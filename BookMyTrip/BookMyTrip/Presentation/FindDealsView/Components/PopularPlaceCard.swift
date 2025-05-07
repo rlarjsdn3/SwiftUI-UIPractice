@@ -74,7 +74,7 @@ extension PopularPlaceCard {
                 .font(.title3)
                 .fontWeight(.bold)
 
-            Text("Distance to \(String(format: "%.2f", place.distance)) mi")
+            Text("Distance to \(String(format: "%.3f", place.distance)) mi")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

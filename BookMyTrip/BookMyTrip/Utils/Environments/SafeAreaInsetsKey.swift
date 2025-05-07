@@ -8,9 +8,9 @@
 import SwiftUI
 import UIKit
 
-#if disabled
-struct SafeAreaInsetsKey: EnvironmentKey {
-    
+struct SafeAreaInsetsKey: @preconcurrency EnvironmentKey {
+
+    @MainActor
     static let defaultValue: EdgeInsets = {
         if let edgeInsets = Helper.keyWindow()?.safeAreaInsets {
             return edgeInsets.insets
@@ -18,17 +18,14 @@ struct SafeAreaInsetsKey: EnvironmentKey {
         return .zero
     }()
 }
-#endif
 
 extension EnvironmentValues {
     
     /// 안전 영역(Safe Area) 여백 값을 반환합니다.
-    @Entry var safeAreaInsets: EdgeInsets = {
-        if let edgeInsets = Helper.keyWindow()?.safeAreaInsets {
-            return edgeInsets.insets
-        }
-        return .zero
-    }()
+    var safeAreaInsets: EdgeInsets {
+        get { self[SafeAreaInsetsKey.self] }
+        set { self[SafeAreaInsetsKey.self] = newValue }
+    }
 }
 
 

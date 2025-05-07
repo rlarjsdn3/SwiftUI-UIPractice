@@ -44,10 +44,9 @@ struct ApplicationData {
     let tickets: [Ticket]
 
     init() {
-        #warning("텍스트는 제시한 UI와 동일하게 작성")
         popularPlaces = [
-            .init(title: "주상절리", distance: 1.45, resource: "columnar-joints"),
-            .init(title: "설악산", distance: 6.54, resource: "seoraksan-mountain"),
+            .init(title: "New york city skyline", distance: 2.902, resource: "columnar-joints"),
+            .init(title: "Brooklyn bridge", distance: 2.128, resource: "seoraksan-mountain"),
             .init(title: "광화문", distance: 4.32, resource: "gwanghwamun-gate"),
             .init(title: "광안대교", distance: 9.43, resource: "gwangan-bridge"),
             .init(title: "경복궁", distance: 8.43, resource: "gyeongbokgung-palace"),

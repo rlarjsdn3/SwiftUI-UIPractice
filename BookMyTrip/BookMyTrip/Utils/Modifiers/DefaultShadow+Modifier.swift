@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DefaultShadow: ViewModifier {
     
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
-    
     let color: Color
     let opacity: Double
     

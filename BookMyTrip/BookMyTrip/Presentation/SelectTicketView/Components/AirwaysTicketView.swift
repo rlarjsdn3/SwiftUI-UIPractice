@@ -84,7 +84,7 @@ extension AirwaysTicketView {
             HStack {
                 flightInfoView(route.departureTime, route.departure)
 
-                FlightPathView(duration: "5h 30m")
+                FlightPathView(duration: route.duration)
                     .padding(.horizontal, 36)
                     .offset(y: 6)
 

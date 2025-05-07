@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Helper {
+@MainActor class Helper {
     
     static func keyWindow() -> UIWindow? {
         for scene in UIApplication.shared.connectedScenes {

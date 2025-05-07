@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-///
 struct TripNavigationStack<Content>: View where Content: View {
     
     @State private var navigationBarHeight: CGFloat = 30
