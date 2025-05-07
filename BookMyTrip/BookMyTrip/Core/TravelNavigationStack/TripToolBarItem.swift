@@ -16,6 +16,10 @@ struct TripToolBarItem: View {
     private let label: TripToolBarContent
     private let action: () -> Void
     
+    /// 네비게이션 바 또는 툴바에 사용할 사용자 지정 툴바 아이템을 생성합니다.
+    /// - Parameters:
+    ///   - label: 툴바 아이템의 콘텐츠 (모양 또는 심볼)
+    ///   - action: 아이템 클릭 시 실행할 액션
     init(_ label: TripToolBarContent, action: @escaping () -> Void) {
         self.label = label
         self.action = action

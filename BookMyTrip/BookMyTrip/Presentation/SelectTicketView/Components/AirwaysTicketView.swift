@@ -37,7 +37,7 @@ extension AirwaysTicketView {
                 .rotationEffect(.degrees(-45))
                 .foregroundStyle(.white)
                 .padding(12)
-                .background(.tripGray, in: Circle())
+                .background(.tripGray, in: .circle)
 
             Text("Airways")
                 .font(.title2)

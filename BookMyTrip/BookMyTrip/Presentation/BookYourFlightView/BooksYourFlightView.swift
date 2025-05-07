@@ -108,10 +108,7 @@ extension BooksYourFlightView {
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)
                 .frame(width: 55, height: 55)
-                .background {
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(.tripPurple)
-                }
+                .cornerRadius(.tripPurple, cornerRadius: 15)
         }
         .shadow(Color.tripPurple)
     }

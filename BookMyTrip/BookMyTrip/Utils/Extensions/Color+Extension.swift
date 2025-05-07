@@ -10,11 +10,11 @@ import SwiftUI
 
 extension Color {
 
-    /// <#Description#>
+    /// RGB 값을 사용하여 색상을 생성합니다.
     /// - Parameters:
-    ///   - r: <#r description#>
-    ///   - g: <#g description#>
-    ///   - b: <#b description#>
+    ///   - r: 빨간색 값 (0 ~ 255)
+    ///   - g: 녹색 값 (0 ~ 255)
+    ///   - b: 파란색 값 (0 ~ 255)
     init(r: Double, g: Double, b: Double) {
         self.init(
             red: r / 255.0,
@@ -24,10 +24,10 @@ extension Color {
     }
 
 
-    /// <#Description#>
+    /// 라이트 모드와 다크 모드에 따른 색상을 생성합니다.
     /// - Parameters:
-    ///   - light: <#light description#>
-    ///   - dark: <#dark description#>
+    ///   - light: 라이트 모드에서 사용할 색상
+    ///   - dark: 다크 모드에서 사용할 색상
     init(light: Color, dark: Color) {
         self.init(
             UIColor(
@@ -40,10 +40,10 @@ extension Color {
 
 extension UIColor {
 
-    /// <#Description#>
+    /// 라이트 모드와 다크 모드에 따른 동적 색상을 생성합니다.
     /// - Parameters:
-    ///   - light: <#light description#>
-    ///   - dark: <#dark description#>
+    ///   - light: 라이트 모드에서 사용할 색상
+    ///   - dark: 다크 모드에서 사용할 색상
     convenience init(light: UIColor, dark: UIColor) {
         self.init { trait in
             switch trait.userInterfaceStyle {

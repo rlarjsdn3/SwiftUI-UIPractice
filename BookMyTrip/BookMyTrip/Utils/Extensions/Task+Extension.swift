@@ -10,6 +10,12 @@ import Foundation
 // Reference: Swift by Sundell (swiftbysundell.com)
 extension Task where Failure == Error {
     
+    /// 지정된 지연 시간 후에 비동기 작업을 실행합니다.
+    /// - Parameters:
+    ///   - delayInterval: 작업 실행 전 지연 시간 (초 단위)
+    ///   - priority: 작업 우선순위 (기본값: nil)
+    ///   - operation: 실행할 비동기 작업 클로저
+    /// - Returns: 생성된 Task 인스턴스
     @discardableResult
     static func delayed(
         byTimeInterval delayInterval: TimeInterval,

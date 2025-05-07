@@ -65,7 +65,7 @@ struct FindDealsSymbolView: View {
         .font(.title3)
         .foregroundStyle(.white)
         .frame(width: 62.5, height: 62.5)
-        .background(link.tint, in: RoundedRectangle(cornerRadius: 20))
+        .cornerRadius(link.tint, cornerRadius: 20)
         .padding(.bottom, 4)
         .shadow(link.tint, opacity: 0.44)
     }

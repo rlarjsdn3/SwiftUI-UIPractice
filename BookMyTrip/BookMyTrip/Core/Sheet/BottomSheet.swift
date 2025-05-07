@@ -171,13 +171,13 @@ extension BottomSheet {
 
 extension View {
     
-    /// <#Description#>
+    /// 지정된 이미지와 라벨을 포함하는 바텀 시트를 표시합니다.
     /// - Parameters:
-    ///   - isPresented: <#isPresented description#>
-    ///   - image: <#image description#>
-    ///   - label: <#label description#>
-    ///   - content: <#content description#>
-    /// - Returns: <#description#>
+    ///   - isPresented: 바텀 시트 표시 여부를 제어하는 바인딩
+    ///   - image: 바텀 시트에 표시할 이미지 심볼
+    ///   - label: 바텀 시트에 표시할 텍스트 라벨
+    ///   - content: 바텀 시트 내부에 표시할 콘텐츠 뷰
+    /// - Returns: 바텀 시트가 포함된 뷰
     func bottomSheet<Content>(
         isPresented: Binding<Bool>,
         image: MySymbol,

@@ -27,7 +27,15 @@ struct TicketView<Header, Footer>: View where Header: View, Footer: View {
     var horizontalLinePadding: CGFloat {
         linePadding + (ellipsisSize / 2)
     }
-
+    
+    /// 타원, 둥근 모서리, 헤더 및 푸터 뷰를 포함하는 커스텀 뷰를 초기화합니다.
+    /// - Parameters:
+    ///   - ellipsisSize: 타원의 크기 (지름, 기본값: 20)
+    ///   - ellipsisOffset: 타원의 Y 축 위치 오프셋 (기본값: 70)
+    ///   - cornerRadius: 사각형의 모서리 반경 (기본값: 25)
+    ///   - linePadding: 선의 여백 (기본값: 12.5)
+    ///   - headerView: 상단에 표시하는 뷰
+    ///   - footerView: 하단에 표시하는 뷰
     init(
         ellipsisSize: CGFloat = 20,
         ellipsisOffset: CGFloat = 70,

@@ -9,18 +9,15 @@ import SwiftUI
 
 struct TicketShape: Shape {
 
-    ///
     let ellipsisSize: CGFloat
-    ///
     let ellipsisOffset: CGFloat
-    //
     let cornerRadius: CGFloat
     
-    /// <#Description#>
+    /// 둥근 모서리 사각형과 양쪽 타원(점)을 생성하는 경로를 초기화합니다.
     /// - Parameters:
-    ///   - ellipsisSize: <#ellipsisSize description#>
-    ///   - ellipsisOffset: <#ellipsisOffset description#>
-    ///   - cornerRadius: <#cornerRadius description#>
+    ///   - ellipsisSize: 타원의 크기 (지름)
+    ///   - ellipsisOffset: 타원의 Y 축 위치 오프셋
+    ///   - cornerRadius: 사각형의 모서리 반경
     init(
         ellipsisSize: CGFloat,
         ellipsisOffset: CGFloat,

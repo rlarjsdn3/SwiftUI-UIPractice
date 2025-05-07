@@ -22,7 +22,7 @@ struct SafeAreaInsetsKey: EnvironmentKey {
 
 extension EnvironmentValues {
     
-    /// <#Description#>
+    /// 안전 영역(Safe Area) 여백 값을 반환합니다.
     @Entry var safeAreaInsets: EdgeInsets = {
         if let edgeInsets = Helper.keyWindow()?.safeAreaInsets {
             return edgeInsets.insets

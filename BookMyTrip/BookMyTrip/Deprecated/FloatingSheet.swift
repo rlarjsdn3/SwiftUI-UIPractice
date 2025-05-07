@@ -68,7 +68,7 @@ extension View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .presentationDetents([detent])
                 .presentationBackground(.clear)
-                .background(.background, in: RoundedRectangle(cornerRadius: 30))
+                .cornerRadius(.background, cornerRadius: 30)
                 .padding([.horizontal, .top])
         }
     }

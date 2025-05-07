@@ -62,10 +62,7 @@ extension PopularPlaceCard {
                         .font(.caption)
                         .foregroundStyle(.white)
                         .padding(5)
-                        .background(
-                            .white.opacity(0.5),
-                            in: .circle
-                        )
+                        .background(.white.opacity(0.5), in: .circle)
                         .padding(12.5)
                 }
         }

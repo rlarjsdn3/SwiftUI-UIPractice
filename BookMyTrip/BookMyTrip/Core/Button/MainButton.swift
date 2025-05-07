@@ -32,10 +32,7 @@ struct MainButton: View {
                 .foregroundStyle(.white)
                 .padding(18)
                 .frame(maxWidth: .infinity)
-                .background {
-                    RoundedRectangle(cornerRadius: 14)
-                        .fill(.tripPurple)
-                }
+                .cornerRadius(.tripPurple, cornerRadius: 14)
         }
         .shadow(tint)
     }

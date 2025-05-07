@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DefaultShadow: ViewModifier {
     
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     let color: Color
     let opacity: Double
     
@@ -20,6 +22,11 @@ struct DefaultShadow: ViewModifier {
 
 extension View {
     
+    /// 뷰에 지정된 색상과 불투명도로 그림자를 적용합니다.
+    /// - Parameters:
+    ///   - color: 그림자 색상 (기본값: .tripGray)
+    ///   - opacity: 그림자 불투명도 (기본값: 0.33)
+    /// - Returns: 그림자가 적용된 뷰
     func shadow(
         _ color: Color = .tripGray,
         opacity: Double = 0.33

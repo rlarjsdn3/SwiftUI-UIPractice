@@ -16,6 +16,14 @@ struct VerticalLine: Shape {
     let dash: [CGFloat]
     let dashPhase: CGFloat
 
+    /// 선의 스타일을 설정하는 초기화 메서드입니다.
+    /// - Parameters:
+    ///   - lineWidth: 선의 두께 (기본값: 1)
+    ///   - lineCap: 선 끝의 모양 (기본값: .butt)
+    ///   - lineJoin: 선 연결 모양 (기본값: .miter)
+    ///   - miterLimit: 마이터 제한 값 (기본값: 10)
+    ///   - dash: 점선 패턴 (기본값: 빈 배열)
+    ///   - dashPhase: 점선의 시작 지점 (기본값: 0)
     public init(
         lineWidth: CGFloat = 1,
         lineCap: CGLineCap = .butt,

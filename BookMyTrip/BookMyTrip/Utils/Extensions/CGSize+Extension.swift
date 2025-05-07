@@ -9,8 +9,8 @@ import SwiftUI
 
 extension CGSize {
     
-    /// <#Description#>
-    /// - Parameter uniformSize: <#widthHeight description#>
+    /// 동일한 너비와 높이를 가진 크기를 생성합니다.
+    /// - Parameter uniformSize: 너비와 높이에 사용할 크기
     init(uniformSize cgfloat: CGFloat) {
         self.init(width: cgfloat, height: cgfloat)
     }

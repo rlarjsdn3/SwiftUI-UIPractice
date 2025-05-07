@@ -28,7 +28,7 @@ struct RecommendedFlightCard: View {
         .padding(.horizontal, 12)
         .frame(width: 140)
         .frame(maxHeight: 150)
-        .background(linearGradient(flight.color), in: RoundedRectangle(cornerRadius: 20))
+        .cornerRadius(linearGradient(flight.color), cornerRadius: 20)
         .shadow(flight.color, opacity: 0.55)
     }
 }
@@ -42,7 +42,7 @@ extension RecommendedFlightCard {
                 .foregroundStyle(flight.color)
                 .rotationEffect(.degrees(-45))
                 .padding(6)
-                .background(.white, in: RoundedRectangle(cornerRadius: 8))
+                .cornerRadius(.white, cornerRadius: 8)
 
             Spacer()
         }

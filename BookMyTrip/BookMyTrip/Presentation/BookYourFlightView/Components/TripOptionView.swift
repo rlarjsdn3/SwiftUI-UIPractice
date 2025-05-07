@@ -55,10 +55,7 @@ struct TripOptionView<Icon, Detail>: View where Icon: View, Detail: View {
         .padding(.leading, edgeInsets.leading)
         .padding(.trailing, edgeInsets.trailing)
         .padding(.bottom, edgeInsets.bottom)
-        .background {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(.tripSecondary)
-        }
+        .cornerRadius(.tripSecondary, cornerRadius: cornerRadius)
         .overlay {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .stroke(.tripStroke, lineWidth: 1)

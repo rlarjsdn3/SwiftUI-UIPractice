@@ -110,34 +110,34 @@ extension TripNavigationStack {
 
 extension View {
     
-    /// <#Description#>
-    /// - Parameter text: <#text description#>
-    /// - Returns: <#description#>
+    /// 네비게이션 바의 제목을 설정합니다.
+    /// - Parameter text: 네비게이션 바에 표시할 제목
+    /// - Returns: 제목이 적용된 뷰
     func travelNavigationBarTitle(_ text: String) -> some View {
         return self.preference(key: NavigationBarTitlePreferenceKey.self, value: text)
     }
     
-    /// <#Description#>
-    /// - Parameter height: <#height description#>
-    /// - Returns: <#description#>
+    /// 네비게이션 바의 높이를 설정합니다.
+    /// - Parameter height: 네비게이션 바의 높이
+    /// - Returns: 높이가 적용된 뷰
     func travelNavigationBarHeight(_ height: CGFloat) -> some View {
         return self.preference(key: NavigationBarHeightPreferenceKey.self, value: height)
     }
     
-    /// <#Description#>
-    /// - Parameter mode: <#mode description#>
-    /// - Returns: <#description#>
+    /// 네비게이션 바의 제목 표시 모드를 설정합니다.
+    /// - Parameter mode: 제목 표시 모드 (예: 자동, 크기 조정)
+    /// - Returns: 모드가 적용된 뷰
     func travelNavigationBarTitleDisplayMode(_ mode: NavigationBarItem.TitleDisplayMode) -> some View {
         return self.preference(key: NavigationBarTitleDisplayModePreferenceKey.self, value: mode)
     }
     
-    /// <#Description#>
+    /// 네비게이션 바의 툴바 레이아웃을 설정합니다.
     /// - Parameters:
-    ///   - leadingSpacing: <#leadingSpacing description#>
-    ///   - trailingSpacing: <#trailingSpacing description#>
-    ///   - leadingToolbar: <#leadingToolbar description#>
-    ///   - trailingToolBar: <#trailingToolBar description#>
-    /// - Returns: <#description#>
+    ///   - leadingSpacing: 좌측 툴바 버튼 간 간격 (기본값: nil)
+    ///   - trailingSpacing: 우측 툴바 버튼 간 간격 (기본값: nil)
+    ///   - leadingToolbar: 좌측 툴바 콘텐츠 (기본값: 비어 있음)
+    ///   - trailingToolBar: 우측 툴바 콘텐츠 (기본값: 비어 있음)
+    /// - Returns: 툴바 레이아웃이 적용된 뷰
     func travelToolBarLayout<Leading, Trailing>(
         leadingSpacing: CGFloat? = nil,
         trailingSpacing: CGFloat? = nil,
@@ -145,9 +145,9 @@ extension View {
         @ViewBuilder trailingToolBar: () -> Trailing = { EmptyView() }
     ) -> some View where Leading: View, Trailing: View {
         let layout = ToolbarLayout(
-            leadingToolbar: leadingToolbar().eraseToIdentifiableAnyView(),
+            leadingToolbar: leadingToolbar().eraseToIdentifiedView,
             leadingSpacing: leadingSpacing,
-            trarilingToolbar: trailingToolBar().eraseToIdentifiableAnyView(),
+            trarilingToolbar: trailingToolBar().eraseToIdentifiedView,
             trailingSpacing: trailingSpacing
         )
         

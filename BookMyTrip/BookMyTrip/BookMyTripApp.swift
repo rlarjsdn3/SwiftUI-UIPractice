@@ -17,11 +17,8 @@ struct BookMyTripApp: App {
     }
 }
 
+#warning("일부 데이터 모델 샘플에 맞게 정확하게 수정하기")
+#warning("라이트 모드/다크 모드에 따라 그림자 투명도 조정")
 
-#warning("마지막 구조체 이름, 폴더 이름, 파일 위치 점검")
-#warning("문서 주석 작성")
-
-#warning("디자인 마지막 최종 점검")
 #warning("Swift Concurrency 적용")
-
 #warning("일부 확장 및 기능 단위 테스트 작성")
